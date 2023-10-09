@@ -26,15 +26,28 @@ const doneBtn = new SuperInput('button', 'doneBtn', [['value', 'Completed Tasks'
 const dataStore = []
 const completedTasks = []
 
-clearBtn.disabled = true
+clearBtn.disable()
 
 clearBtn.click(() => {
   for (let i = 0; i < dataStore.length; i++) {
     const dataClear = dataStore[i]
+    
     dataClear.remove()
   }
 
-  clearBtn.disabled = true
+  clearBtn.disable()
+})
+
+doneBtn.click(() => {
+  for (let i = 0; i < completedTasks.length; i++) {
+    const storedData = completedTasks[i]
+    console.log(storedData)
+
+    
+      storedData.appendTo(toDoContainer.element)
+      
+    
+  }
 })
 
 toDoForm.submit(() => {
@@ -44,31 +57,22 @@ toDoForm.submit(() => {
   const completeBtn = new SuperInput('button', 'completeBtn', [['value', 'Completed']])
   const reDoBtn = new SuperInput('button', 'reDoBtn', [['value', 'Re-Do']])
   toDoItem.appendTo(toDoContainer.element)
-  completeBtn.appendTo(toDoContainer.element)
-  deleteBtn.appendTo(toDoContainer.element)
-  reDoBtn.appendTo(toDoContainer.element)
-  dataStore.push(toDoItem, deleteBtn, completeBtn)
+  completeBtn.appendTo(toDoItem.element)
+  deleteBtn.appendTo(toDoItem.element)
+  reDoBtn.appendTo(toDoItem.element)
+  dataStore.push(toDoItem)
   completedTasks.push(toDoItem)
+
+  clearBtn.enable()
 
   if (!toDoItem) {
     return
   }
 
-  clearBtn.disabled = false
-
-  // needs work
-  doneBtn.click(() => {
-    for (let i = 0; i < completedTasks.length; i++) {
-      const storedData = completedTasks[i]
-      console.log(storedData)
-
-      if (completeBtn) {
-        storedData.appendTo(toDoContainer.element)
-        toDoItem.unStrike()
-        toDoItem.colour('green')
-      }
-    }
-  })
+  if (completeBtn === 'click') {
+    toDoItem.unStrike()
+    toDoItem.colour('green')
+  }
 
   // resets completed tasks
   reDoBtn.click(() => {
