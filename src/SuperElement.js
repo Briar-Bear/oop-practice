@@ -1,6 +1,12 @@
 import { SuperEvent } from './SuperEvent'
 
 /**
+ * the name of the element
+ * @typedef {string} elementTag
+ */
+
+
+/**
  * @class creates elements
  * @extends SuperEvent
  * @param {elementTag} type - {@link elementTag}

@@ -6,10 +6,6 @@ import { SuperForm } from './SuperForm'
 import { SuperInput } from './SuperInput'
 
 
-/**
- * the name of the element
- * @typedef {string} elementTag
- */
 
 
 
