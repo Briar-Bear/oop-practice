@@ -34,3 +34,11 @@ SuperElement.prototype.remove = function () {
 SuperElement.prototype.colour = function (colour) {
   this.element.style.color = colour
 }
+
+SuperElement.prototype.disable = function () {
+  this.element.disabled = true
+}
+
+SuperElement.prototype.enable = function () {
+  this.element.disabled = false
+}
