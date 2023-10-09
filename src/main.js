@@ -6,17 +6,39 @@ import { SuperForm } from './SuperForm'
 import { SuperInput } from './SuperInput'
 
 
+const toDoApp = {
+  list: [],
+  start({
+    clearText = 'Clear All',
+    completeText = 'Complete All',
+    unfinishedText = 'Unfinished',
+    minCharacterLength = 0,
+    maxCharacterLength = 20,
+    fontType = 'sans-serif'
+  } = {}) {
+    // all required elements
+    const toDoContainer = new SuperDisplay('centerBoth')
+    const toDoForm = new SuperForm()
+    const toDoHeader = new SuperContent('h1', 'To Do List', fontType, maxCharacterLength)
+    const toDoInput = new SuperInput('text', 'list', [['min', minCharacterLength], ['max', maxCharacterLength]])
+    const toDoBtn = new SuperInput('submit', 'Submit')
+    const clearBtn = new SuperInput('button', 'clearBtn', [['value', clearText]])
+    const completeAllBtn = new SuperInput('button', 'completeAllBtn', [['value', completeText]])
+    const inCompleteBtn = new SuperInput('button', 'completeAllBtn', [['value', unfinishedText]])
+  }
+}
+
+toDoApp.start({
+  clearText,
+  completeText,
+  unfinishedText,
+  minCharacterLength,
+  maxCharacterLength,
+  fontType
+})
 
 
 
-const toDoContainer = new SuperDisplay('centerBoth')
-const toDoForm = new SuperForm()
-const toDoHeader = new SuperContent('h1', 'To Do List', 'sans-serif', '20')
-const toDoInput = new SuperInput('text', 'list', [['min', '0'], ['max', '20']])
-const toDoBtn = new SuperInput('submit', 'Submit')
-const clearBtn = new SuperInput('button', 'clearBtn', [['value', 'Clear All']])
-const completeAllBtn = new SuperInput('button', 'completeAllBtn', [['value', 'Complete All']])
-const inCompleteBtn = new SuperInput('button', 'completeAllBtn', [['value', 'Unfinished']])
 const dataStore = []
 const completedTasks = []
 
