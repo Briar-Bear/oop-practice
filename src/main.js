@@ -57,7 +57,7 @@ inCompleteBtn.disable()
 submitBtn.disable()
 
 const toDoText = toDoForm.getValue('to-do-text')
-
+  
   toDoText.keyUp(() => {
     if (toDoText) {
       submitBtn.enable()
