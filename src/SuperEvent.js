@@ -25,3 +25,7 @@ SuperEvent.prototype.click = function (callback, options) {
 SuperEvent.prototype.submit = function (callback, options) {
   addListener(this.element, 'submit', callback, options)
 }
+
+SuperEvent.prototype.keyUp = function (callback, options) {
+  addListener(this.element, 'keyup', callback, options)
+}

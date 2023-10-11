@@ -17,25 +17,34 @@ const toDoApp = {
     fontType = 'sans-serif'
   } = {}) {
     // all required elements
-    const toDoContainer = new SuperDisplay('centerBoth')
-    const toDoForm = new SuperForm()
-    const toDoHeader = new SuperContent('h1', 'To Do List', fontType, maxCharacterLength)
-    const toDoInput = new SuperInput('text', 'list', [['min', minCharacterLength], ['max', maxCharacterLength]])
-    const toDoBtn = new SuperInput('submit', 'Submit')
-    const clearBtn = new SuperInput('button', 'clearBtn', [['value', clearText]])
-    const completeAllBtn = new SuperInput('button', 'completeAllBtn', [['value', completeText]])
-    const inCompleteBtn = new SuperInput('button', 'completeAllBtn', [['value', unfinishedText]])
+
   }
 }
 
-toDoApp.start({
-  clearText,
-  completeText,
-  unfinishedText,
-  minCharacterLength,
-  maxCharacterLength,
-  fontType
-})
+// toDoApp.start({
+//   clearText,
+//   completeText,
+//   unfinishedText,
+//   minCharacterLength,
+//   maxCharacterLength,
+//   fontType
+// })
+
+const clearText = 'Clear All'
+const completeText = 'Complete All'
+const unfinishedText = 'Unfinished'
+const minCharacterLength = 0
+const maxCharacterLength = 20
+const fontType = 'sans-serif'
+
+const toDoContainer = new SuperDisplay('centerBoth')
+const toDoForm = new SuperForm()
+const toDoHeader = new SuperContent('h1', 'To Do List', fontType, maxCharacterLength)
+const toDoInput = new SuperInput('text', 'to-do-text', [['min', minCharacterLength], ['max', maxCharacterLength]])
+const submitBtn = new SuperInput('submit', 'Submit')
+const clearBtn = new SuperInput('button', 'clearBtn', [['value', clearText]])
+const completeAllBtn = new SuperInput('button', 'completeAllBtn', [['value', completeText]])
+const inCompleteBtn = new SuperInput('button', 'completeAllBtn', [['value', unfinishedText]])
 
 
 
@@ -45,6 +54,16 @@ const completedTasks = []
 clearBtn.disable()
 completeAllBtn.disable()
 inCompleteBtn.disable()
+submitBtn.disable()
+
+const toDoText = toDoForm.getValue('to-do-text')
+
+  toDoText.keyUp(() => {
+    if (toDoText) {
+      submitBtn.enable()
+    }
+  })
+
 
 inCompleteBtn.click(() => {
   for (let i = 0; i < completedTasks.length; i++) {
@@ -83,12 +102,20 @@ clearBtn.click(() => {
 })
 
 
+
 toDoForm.submit(() => {
-  const list = toDoForm.getValue('list')
-  const toDoItem = new SuperContent('li', list, 'sans-serif', '20')
+  
+  const toDoText = toDoForm.getValue('to-do-text')
+
+  if (!toDoText) {
+    return
+  }
+
+  const toDoItem = new SuperContent('li', toDoText, 'sans-serif', '20')
   const deleteBtn = new SuperInput('button', 'deleteBtn', [['value', 'X']])
   const completeBtn = new SuperInput('button', 'completeBtn', [['value', 'Completed']])
   const reDoBtn = new SuperInput('button', 'reDoBtn', [['value', 'Re-Do']])
+  
   toDoItem.appendTo(toDoContainer.element)
   completeBtn.appendTo(toDoItem.element)
   deleteBtn.appendTo(toDoItem.element)
@@ -99,10 +126,8 @@ toDoForm.submit(() => {
   clearBtn.enable()
   completeAllBtn.enable()
   inCompleteBtn.enable()
-
-  if (!toDoItem) {
-    return
-  }
+  
+  
 
   if (completeBtn === 'click') {
     toDoItem.unStrike()
@@ -134,7 +159,7 @@ toDoForm.appendTo(document.body)
 toDoContainer.appendTo(toDoForm.element)
 toDoHeader.appendTo(toDoContainer.element)
 toDoInput.appendTo(toDoContainer.element)
-toDoBtn.appendTo(toDoContainer.element)
+submitBtn.appendTo(toDoContainer.element)
 clearBtn.appendTo(toDoContainer.element)
 completeAllBtn.appendTo(toDoContainer.element)
 inCompleteBtn.appendTo(toDoContainer.element)
