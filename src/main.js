@@ -58,12 +58,14 @@ submitBtn.disable()
 
 const toDoText = toDoForm.getValue('to-do-text')
   
+
   toDoText.keyUp(() => {
     if (toDoText) {
       submitBtn.enable()
     }
   })
 
+  
 
 inCompleteBtn.click(() => {
   for (let i = 0; i < completedTasks.length; i++) {
@@ -153,6 +155,7 @@ toDoForm.submit(() => {
     completeBtn.remove()
   })
 }, { preventDefault: true })
+
 
 // to do list appends
 toDoForm.appendTo(document.body)
