@@ -8,7 +8,7 @@ import { SuperElement } from './SuperElement'
  * @param {Array.<Array.string>} options - a list that contains names and values to set attributes.
  */
 
-export function SuperInput (type, name, options = []) {
+export function SuperInput ({ type, name, options = [] }) {
   SuperElement.call(this, 'input')
 
   this.element.type = type

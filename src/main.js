@@ -1,9 +1,27 @@
-// and a button that filters active, completed and all the to-do
+import {createElement} from 'super-element'
+
 
 import { SuperContent } from './SuperContent'
 import { SuperDisplay } from './SuperDisplay'
 import { SuperForm } from './SuperForm'
 import { SuperInput } from './SuperInput'
+
+const superTypes = {
+  input: SuperInput
+}
+
+function createElement(type, options) {
+  return new superTypes[type](options)
+}
+
+const button = createElement('input', {
+  type: 'button',
+  name: 'submit',
+  options: [
+    ['value', 'Submit']
+  ]
+})
+
 
 
 const toDoApp = {
