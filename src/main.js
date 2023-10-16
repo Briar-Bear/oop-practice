@@ -132,7 +132,6 @@ const toDoApp = {
   }
 }
 
-
 // to do list appends
 toDoForm.appendTo(document.body)
 toDoContainer.appendTo(toDoForm)
