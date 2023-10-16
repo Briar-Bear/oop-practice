@@ -6,10 +6,9 @@ completeAllBtn.disable()
 inCompleteBtn.disable()
 submitBtn.disable()
 
-const completedTasks = []
-
 const toDoApp = {
   list: [],
+  completedTasks: [],
   start({
     clearText = 'Clear All',
     completeText = 'Complete All',
@@ -101,14 +100,14 @@ const toDoApp = {
     } else submitBtn.disable()
   },
   inComplete () {
-    for (let i = 0; i < completedTasks.length; i++) {
-      const storedData = completedTasks[i]
+    for (let i = 0; i < this.completedTasks.length; i++) {
+      const storedData = this.completedTasks[i]
       console.log(storedData)    
     }
   },
   complete() {
-    for (let i = 0; i < completedTasks.length; i++) {
-      const storedData = completedTasks[i]
+    for (let i = 0; i < this.completedTasks.length; i++) {
+      const storedData = this.completedTasks[i]
       console.log(storedData)
     }
   },
