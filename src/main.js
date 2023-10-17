@@ -142,3 +142,4 @@ const toDoApp = {
 }
 
 
+toDoApp.start()
