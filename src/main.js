@@ -26,6 +26,15 @@ const toDoApp = {
     const clearBtn = superElement('input', { type: 'button', name: 'clearBtn', options: [['value', clearText]] })
     const completeAllBtn = superElement('input',{ type: 'button', name: 'completeAllBtn', options: [['value', completeText]] })
     const inCompleteBtn = superElement('input',{ type: 'button', name: 'completeAllBtn', options: [['value', unfinishedText]] })
+    // to do list appends
+    toDoForm.appendTo(document.body)
+    toDoContainer.appendTo(toDoForm)
+    toDoHeader.appendTo(toDoContainer)
+    toDoInput.appendTo(toDoContainer)
+    submitBtn.appendTo(toDoContainer)
+    clearBtn.appendTo(toDoContainer)
+    completeAllBtn.appendTo(toDoContainer)
+    inCompleteBtn.appendTo(toDoContainer)
     // EVENT LISTENERS
     // a button that clears to-do items
     clearBtn.click(() => {
@@ -132,12 +141,4 @@ const toDoApp = {
   }
 }
 
-// to do list appends
-toDoForm.appendTo(document.body)
-toDoContainer.appendTo(toDoForm)
-toDoHeader.appendTo(toDoContainer)
-toDoInput.appendTo(toDoContainer)
-submitBtn.appendTo(toDoContainer)
-clearBtn.appendTo(toDoContainer)
-completeAllBtn.appendTo(toDoContainer)
-inCompleteBtn.appendTo(toDoContainer)
+
