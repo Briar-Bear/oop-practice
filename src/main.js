@@ -1,15 +1,9 @@
-import {superElement} from '../lib/main'
-
-
-clearBtn.disable()
-completeAllBtn.disable()
-inCompleteBtn.disable()
-submitBtn.disable()
+import superTypes from '../lib/main'
 
 const toDoApp = {
   list: [],
   completedTasks: [],
-  start({
+  start ({
     clearText = 'Clear All',
     completeText = 'Complete All',
     unfinishedText = 'Unfinished',
@@ -18,128 +12,121 @@ const toDoApp = {
     fontType = 'sans-serif'
   } = {}) {
     // all required elements
-    const toDoForm = superElement('form')
-    const toDoContainer = superElement('display', { alignment: 'centerBoth'})
-    const toDoHeader = superElement('content', { type: 'h1', content: 'To Do List', font: fontType, fontSize: '16' })
-    const toDoInput = superElement('input', { type: 'input', name: 'to-do-text', options: [['min', minCharacterLength], ['max', maxCharacterLength]] })
-    const submitBtn = superElement('input', { type: 'submit', name: 'Submit' })
-    const clearBtn = superElement('input', { type: 'button', name: 'clearBtn', options: [['value', clearText]] })
-    const completeAllBtn = superElement('input',{ type: 'button', name: 'completeAllBtn', options: [['value', completeText]] })
-    const inCompleteBtn = superElement('input',{ type: 'button', name: 'completeAllBtn', options: [['value', unfinishedText]] })
+    this.toDoForm = superTypes('form')
+    this.toDoContainer = superTypes('display', { alignment: 'centerBoth' })
+    this.toDoHeader = superTypes('content', { type: 'h1', content: 'To Do List', font: fontType, fontSize: '16' })
+    this.toDoInput = superTypes('input', { type: 'input', name: 'to-do-text', options: [['min', minCharacterLength], ['max', maxCharacterLength]] })
+    this.submitBtn = superTypes('input', { type: 'submit', name: 'Submit' })
+    this.clearBtn = superTypes('input', { type: 'button', name: 'clearBtn', options: [['value', clearText]] })
+    this.completeAllBtn = superTypes('input', { type: 'button', name: 'completeAllBtn', options: [['value', completeText]] })
+    this.inCompleteBtn = superTypes('input', { type: 'button', name: 'completeAllBtn', options: [['value', unfinishedText]] })
     // to do list appends
-    toDoForm.appendTo(document.body)
-    toDoContainer.appendTo(toDoForm)
-    toDoHeader.appendTo(toDoContainer)
-    toDoInput.appendTo(toDoContainer)
-    submitBtn.appendTo(toDoContainer)
-    clearBtn.appendTo(toDoContainer)
-    completeAllBtn.appendTo(toDoContainer)
-    inCompleteBtn.appendTo(toDoContainer)
+    this.toDoForm.appendTo(document.body)
+    this.toDoContainer.appendTo(this.toDoForm)
+    this.toDoHeader.appendTo(this.toDoContainer)
+    this.toDoInput.appendTo(this.toDoContainer)
+    this.submitBtn.appendTo(this.toDoContainer)
+    this.clearBtn.appendTo(this.toDoContainer)
+    this.completeAllBtn.appendTo(this.toDoContainer)
+    this.inCompleteBtn.appendTo(this.toDoContainer)
     // EVENT LISTENERS
     // a button that clears to-do items
-    clearBtn.click(() => {
+    this.clearBtn.click(() => {
       this.clearContent()
-      clearBtn.disable()
+      this.clearBtn.disable()
     })
     // a listener that listens for key up events in the input bar
-    toDoInput.keyUp(() => {
+    this.toDoInput.keyUp(() => {
       this.keyUpListener()
     })
     // a button that marks content as incomplete
-    inCompleteBtn.click(() => {
+    this.inCompleteBtn.click(() => {
+      this.inComplete()
+      this.inCompleteBtn.disable()
+    })
+    // a button that completes all to-do list items
+    this.completeAllBtn.click(() => {
+      this.complete()
+      this.completeAllBtn.disable()
+    })
+    // the form body with events inside
+    this.toDoForm.submit(() => {
+      this.formComponents()
+    }, { preventDefault: true })
+    // disable buttons
+    this.clearBtn.disable()
+    this.completeAllBtn.disable()
+    this.inCompleteBtn.disable()
+    this.submitBtn.disable()
+  },
+  // TO-DO LIST FUNCTIONS
+  // A function that clears content
+  clearContent () {
+    for (let i = 0; i < this.list.length; i++) {
+      const dataClear = this.list[i]
+
+      dataClear.remove()
+    }
+  },
+  keyUpListener () {
+    const toDoText = this.toDoForm.getValue('to-do-text')
+    if (toDoText) {
+      this.submitBtn.enable()
+    } else this.submitBtn.disable()
+  },
+  inComplete () {
+    for (let i = 0; i < this.completedTasks.length; i++) {
+      const storedData = this.completedTasks[i]
       storedData.unStrike()
       storedData.colour('black')
-      inCompleteBtn.disable()  
-    })
-  // a button that completes all to-do list items
-  completeAllBtn.click(() => {
-    this.complete()
-    storedData.strike()
-    storedData.colour('green')
-    completeAllBtn.disable()  
-  })
-  // the form body with events inside
-  toDoForm.submit(() => {
-    this.formComponents()
-  
+      console.log(storedData)
+    }
+  },
+  complete () {
+    for (let i = 0; i < this.completedTasks.length; i++) {
+      const storedData = this.completedTasks[i]
+      storedData.strike()
+      storedData.colour('green')
+      console.log(storedData)
+    }
+  },
+  formComponents () {
+    const toDoText = this.toDoForm.getValue('to-do-text')
 
-    if (!toDoText) {
-      return
-    }
-  
-    if (completeBtn === 'click') {
-      toDoItem.unStrike()
-      toDoItem.colour('green')
-    }
-  
+    const toDoItem = superTypes('content', { type: 'li', content: toDoText, font: 'sans-serif', fontSize: '20' })
+    const deleteBtn = superTypes('input', { type: 'button', name: 'deleteBtn', options: [['value', 'X']] })
+    const completeBtn = superTypes('input', { type: 'button', name: 'completeBtn', options: [['value', 'Completed']] })
+    const reDoBtn = superTypes('input', { type: 'button', name: 'reDoBtn', options: [['value', 'Re-Do']] })
+
     // resets completed tasks
     reDoBtn.click(() => {
       toDoItem.unStrike()
       completeBtn.colour('black')
     })
-  
+
     // completes tasks
     completeBtn.click(() => {
       toDoItem.strike()
       completeBtn.colour('green')
     })
-  
+
     // deletes tasks
     deleteBtn.click(() => {
       deleteBtn.remove()
       toDoItem.remove()
       completeBtn.remove()
     })
-  }, { preventDefault: true })
-  },
-  // TO-DO LIST FUNCTIONS
-  // A function that clears content
-  clearContent () {
-    for (let i = 0; i < this.list.length; i++) {
-      const dataClear = this.list[i];
 
-      dataClear.remove()
-      
-    }  
-  },
-  keyUpListener () {
-    const toDoText = toDoForm.getValue('to-do-text')
-    if (toDoText) {
-      submitBtn.enable()
-    } else submitBtn.disable()
-  },
-  inComplete () {
-    for (let i = 0; i < this.completedTasks.length; i++) {
-      const storedData = this.completedTasks[i]
-      console.log(storedData)    
-    }
-  },
-  complete() {
-    for (let i = 0; i < this.completedTasks.length; i++) {
-      const storedData = this.completedTasks[i]
-      console.log(storedData)
-    }
-  },
-  formComponents() {
-    const toDoText = toDoForm.getValue('to-do-text')
-
-    const toDoItem = new SuperContent('li', toDoText, 'sans-serif', '20')
-    const deleteBtn = new SuperInput('button', 'deleteBtn', [['value', 'X']])
-    const completeBtn = new SuperInput('button', 'completeBtn', [['value', 'Completed']])
-    const reDoBtn = new SuperInput('button', 'reDoBtn', [['value', 'Re-Do']])
-
-    toDoItem.appendTo(toDoContainer)
+    toDoItem.appendTo(this.toDoContainer)
     completeBtn.appendTo(toDoItem)
     deleteBtn.appendTo(toDoItem)
     reDoBtn.appendTo(toDoItem)
-    dataStore.push(toDoItem)
-    completedTasks.push(toDoItem)
-  
-    clearBtn.enable()
-    completeAllBtn.enable()
-    inCompleteBtn.enable()
+    this.completedTasks.push(toDoItem)
+
+    this.clearBtn.enable()
+    this.completeAllBtn.enable()
+    this.inCompleteBtn.enable()
   }
 }
-
 
 toDoApp.start()
