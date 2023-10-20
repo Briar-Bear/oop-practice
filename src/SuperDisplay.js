@@ -5,9 +5,10 @@ import { SuperElement } from './SuperElement'
  * @extends SuperElement
  * @param {string} alignment - the direction the items can be aligned
  */
-export function SuperDisplay (alignment) {
+export function SuperDisplay ({ alignment, direction = '' }) {
   SuperElement.call(this, 'div')
   this.element.style.display = 'flex'
+  this.element.style.flexDirection = direction
   this.alignment(alignment)
 }
 

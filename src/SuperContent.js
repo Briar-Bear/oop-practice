@@ -20,10 +20,10 @@ export function SuperContent ({ type, content, font = '', fontSize = 16 }) {
 
 SuperContent.prototype = Object.create(SuperElement.prototype)
 
-SuperContent.prototype.strike = function () {
-  this.element.style.textDecorationLine = 'line-through'
-}
-
-SuperContent.prototype.unStrike = function () {
-  this.element.style.textDecorationLine = 'none'
+SuperContent.prototype.strike = function (type) {
+  if (type === 'strike') {
+    this.element.style.textDecorationLine = 'line-through'
+  } else if (type === 'unStrike') {
+    this.element.style.textDecorationLine = 'none'
+  }
 }

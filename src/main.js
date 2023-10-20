@@ -1,11 +1,10 @@
 // clear all btn doesnt work as intended
-// completed button doesn't work as intended
+// complete all button doesn't work as intended
 
 import superTypes from '../lib/main'
 
 const toDoApp = {
   list: [],
-  completedTasks: [],
   start ({
     clearText = 'Clear All',
     completeText = 'Complete All',
@@ -16,7 +15,7 @@ const toDoApp = {
   } = {}) {
     // all required elements
     this.toDoForm = superTypes('form')
-    this.toDoContainer = superTypes('display', { alignment: 'centerBoth' })
+    this.toDoContainer = superTypes('display', { alignment: 'centerBoth', direction: 'column' })
     this.toDoHeader = superTypes('content', { type: 'h1', content: 'To Do List', font: fontType, fontSize: '16' })
     this.toDoInput = superTypes('input', { type: 'input', name: 'to-do-text', options: [['min', minCharacterLength], ['max', maxCharacterLength]] })
     this.submitBtn = superTypes('input', { type: 'submit', name: 'Submit' })
@@ -44,13 +43,15 @@ const toDoApp = {
     })
     // a button that marks content as incomplete
     this.inCompleteBtn.click(() => {
-      this.changeResult()
+      this.changeResult('black', 'unStrike')
       this.inCompleteBtn.disable()
+      this.completeAllBtn.enable()
     })
     // a button that completes all to-do list items
     this.completeAllBtn.click(() => {
-      this.changeResult()
+      this.changeResult('green', 'strike')
       this.completeAllBtn.disable()
+      this.inCompleteBtn.enable()
     })
     // the form body with events inside
     this.toDoForm.submit(() => {
@@ -77,18 +78,11 @@ const toDoApp = {
       this.submitBtn.enable()
     } else this.submitBtn.disable()
   },
-  changeResult () {
-    for (let i = 0; i < this.completedTasks.length; i++) {
-      const storedData = this.completedTasks[i]
-
-      if (this.completeAllBtn) {
-        storedData.strike()
-        storedData.colour('green')
-      }
-      if (this.inCompleteBtn) {
-        storedData.unStrike()
-        storedData.colour('black')
-      }
+  changeResult (colour, strike) {
+    for (let i = 0; i < this.list.length; i++) {
+      const storedData = this.list[i]
+      storedData.strike(strike)
+      storedData.colour(colour)
     }
   },
   formComponents () {
@@ -124,7 +118,7 @@ const toDoApp = {
     completeBtn.appendTo(toDoItem)
     deleteBtn.appendTo(toDoItem)
     reDoBtn.appendTo(toDoItem)
-    this.completedTasks.push(toDoItem)
+    this.list.push(toDoItem)
 
     this.clearBtn.enable()
     this.completeAllBtn.enable()
