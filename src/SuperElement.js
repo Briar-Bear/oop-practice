@@ -5,7 +5,6 @@ import { SuperEvent } from './SuperEvent'
  * @typedef {string} elementTag
  */
 
-
 /**
  * @class creates elements
  * @extends SuperEvent
@@ -15,6 +14,16 @@ export function SuperElement (type) {
   // extending the key values
   SuperEvent.call(this)
   this.element = document.createElement(type)
+
+  Object.defineProperty(this, 'color', {
+    get: function () {
+      return this.element.style.color
+    },
+
+    set: (value) => {
+      this.element.style.color = value
+    }
+  })
 }
 
 /**
@@ -41,9 +50,9 @@ SuperElement.prototype.remove = function () {
   this.element.remove()
 }
 
-SuperElement.prototype.colour = function (colour) {
-  this.element.style.color = colour
-}
+// SuperElement.prototype.colour = function (colour) {
+//   this.element.style.color = colour
+// }
 
 SuperElement.prototype.disable = function () {
   this.element.disabled = true

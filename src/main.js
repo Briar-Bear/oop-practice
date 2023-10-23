@@ -5,6 +5,7 @@ import superTypes from '../lib/main'
 
 const toDoApp = {
   list: [],
+  filteredList: [],
   start ({
     clearText = 'Clear All',
     completeText = 'Complete All',
@@ -22,6 +23,8 @@ const toDoApp = {
     this.clearBtn = superTypes('input', { type: 'button', name: 'clearBtn', options: [['value', clearText]] })
     this.completeAllBtn = superTypes('input', { type: 'button', name: 'completeAllBtn', options: [['value', completeText]] })
     this.inCompleteBtn = superTypes('input', { type: 'button', name: 'UnfinishedBtn', options: [['value', unfinishedText]] })
+    this.activeBtn = superTypes('input', { type: 'button', name: 'ActiveBtn', options: [['value', 'Show Active']] })
+    this.showCompletedBtn = superTypes('input', { type: 'button', name: 'show-completed', options: [['value', 'Show Completed']] })
     // to do list appends
     this.toDoForm.appendTo(document.body)
     this.toDoContainer.appendTo(this.toDoForm)
@@ -31,6 +34,8 @@ const toDoApp = {
     this.clearBtn.appendTo(this.toDoContainer)
     this.completeAllBtn.appendTo(this.toDoContainer)
     this.inCompleteBtn.appendTo(this.toDoContainer)
+    this.showCompletedBtn.appendTo(this.toDoContainer)
+    this.activeBtn.appendTo(this.toDoContainer)
     // EVENT LISTENERS
     // a button that clears to-do items
     this.clearBtn.click(() => {
@@ -57,6 +62,16 @@ const toDoApp = {
     this.toDoForm.submit(() => {
       this.formComponents()
     }, { preventDefault: true })
+
+    this.activeBtn.click(() => {
+      for (let i = 0; i < this.list.length; i++) {
+        const filter = this.list[i]
+
+        this.filteredList.push(filter)
+
+        console.log(filter)
+      }
+    })
     // disable buttons
     this.clearBtn.disable()
     this.completeAllBtn.disable()
@@ -82,7 +97,7 @@ const toDoApp = {
     for (let i = 0; i < this.list.length; i++) {
       const storedData = this.list[i]
       storedData.strike(strike)
-      storedData.colour(colour)
+      storedData.color = 'green'
     }
   },
   formComponents () {
@@ -102,9 +117,9 @@ const toDoApp = {
 
     // completes tasks
     completeBtn.click(() => {
-      toDoItem.strike()
-      toDoItem.colour('green')
-      completeBtn.colour('green')
+      toDoItem.strike('strike')
+      toDoItem.color = 'green'
+      completeBtn.color = 'green'
     })
 
     // deletes tasks
