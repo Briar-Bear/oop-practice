@@ -67,10 +67,12 @@ const toDoApp = {
       for (let i = 0; i < this.list.length; i++) {
         const filter = this.list[i]
 
-        this.filteredList.push(filter)
-
-        console.log(filter)
+        if (filter.color !== 'green') {
+          this.filteredList.push(filter)
+        }
       }
+
+      console.log(this.filteredList)
     })
     // disable buttons
     this.clearBtn.disable()
@@ -97,7 +99,7 @@ const toDoApp = {
     for (let i = 0; i < this.list.length; i++) {
       const storedData = this.list[i]
       storedData.strike(strike)
-      storedData.color = 'green'
+      storedData.color = colour
     }
   },
   formComponents () {
@@ -110,9 +112,9 @@ const toDoApp = {
 
     // resets completed tasks
     reDoBtn.click(() => {
-      toDoItem.unStrike()
-      toDoItem.colour('black')
-      completeBtn.colour('black')
+      toDoItem.strike('unStrike')
+      toDoItem.color = 'black'
+      completeBtn.color = 'black'
     })
 
     // completes tasks
