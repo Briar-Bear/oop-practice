@@ -1,4 +1,4 @@
-import { SuperEvent } from './SuperEvent'
+import { $ev } from './SuperEvent'
 
 /**
  * the name of the element
@@ -7,12 +7,12 @@ import { SuperEvent } from './SuperEvent'
 
 /**
  * @class creates elements
- * @extends SuperEvent
+ * @extends $ev
  * @param {elementTag} type - {@link elementTag}
  */
-export function SuperElement (type) {
+export function $e (type) {
   // extending the key values
-  SuperEvent.call(this)
+  $ev.call(this)
   this.element = document.createElement(type)
 
   Object.defineProperty(this, 'color', {
@@ -29,13 +29,13 @@ export function SuperElement (type) {
 /**
  * inheriting superEvent prototype
  */
-SuperElement.prototype = Object.create(SuperEvent.prototype)
+$e.prototype = Object.create($ev.prototype)
 
 /**
  * Used to append
  * @param {string} parent - appends to the parent object
  */
-SuperElement.prototype.appendTo = function (parent) {
+$e.prototype.appendTo = function (parent) {
   if (parent.element) {
     parent.element.append(this.element)
   } else {
@@ -46,7 +46,7 @@ SuperElement.prototype.appendTo = function (parent) {
 /**
  * Used to remove element
  */
-SuperElement.prototype.remove = function () {
+$e.prototype.remove = function () {
   this.element.remove()
 }
 
@@ -54,10 +54,10 @@ SuperElement.prototype.remove = function () {
 //   this.element.style.color = colour
 // }
 
-SuperElement.prototype.disable = function () {
+$e.prototype.disable = function () {
   this.element.disabled = true
 }
 
-SuperElement.prototype.enable = function () {
+$e.prototype.enable = function () {
   this.element.disabled = false
 }

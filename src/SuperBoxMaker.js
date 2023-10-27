@@ -1,18 +1,18 @@
-import { SuperElement } from './SuperElement'
+import { $e } from './SuperElement'
 
 /**
  * @class Used to create images
- * @extends SuperElement
+ * @extends $e
  * @param {string} color - assigns a colour to the element
  * @param {string} width - assigns the width of the element
  * @param {string} height - assigns the height of the element
  */
 
-export function SuperBoxMaker (color, width, height) {
-  SuperElement.call(this, 'div')
+export function $bm (color, width, height) {
+  $e.call(this, 'div')
   this.element.style.backgroundColor = color
   this.element.style.width = width + 'px'
   this.element.style.height = height + 'px'
 }
 
-SuperBoxMaker.prototype = Object.create(SuperElement.prototype)
+$bm.prototype = Object.create($e.prototype)
