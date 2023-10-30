@@ -20,6 +20,10 @@ export function SuperContent ({ type, content, font = '', fontSize = 16 }) {
 
 SuperContent.prototype = Object.create(SuperElement.prototype)
 
+/**
+ * puts a line-through toDoItems if they've been completed and can take the line off if it hasnt been completed.
+ * @param {string} type- used to create an if statement to allow the strike function to strike a line through a todoitem or reverse the line
+ */
 SuperContent.prototype.strike = function (type) {
   if (type === 'strike') {
     this.element.style.textDecorationLine = 'line-through'

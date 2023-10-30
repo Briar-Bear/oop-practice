@@ -13,18 +13,38 @@ function addListener (target, type, listener, options = {}) {
     listener(e)
   })
 }
-
+/**
+* @class creates an element
+ */
 export function SuperEvent () {
   this.element = document.createElement('span')
 }
+
+/**
+ * a function that handles click events
+ * @param {listener} callback - listens for event activation
+ * @param {Object} options -  if the event does not get explicitly handled, its default action should not be taken as it normally would be
+ */
 
 SuperEvent.prototype.click = function (callback, options) {
   addListener(this.element, 'click', callback, options)
 }
 
+/**
+ * a function that handles submit events
+ * @param {listener} callback - listens for event activation
+ * @param {Object} options -  if the event does not get explicitly handled, its default action should not be taken as it normally would be
+ */
+
 SuperEvent.prototype.submit = function (callback, options) {
   addListener(this.element, 'submit', callback, options)
 }
+
+/**
+ * a function that handles keyUp events
+ * @param {listener} callback - listens for event activation
+ * @param {Object} options -  if the event does not get explicitly handled, its default action should not be taken as it normally would be
+ */
 
 SuperEvent.prototype.keyUp = function (callback, options) {
   addListener(this.element, 'keyup', callback, options)

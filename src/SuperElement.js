@@ -54,9 +54,17 @@ SuperElement.prototype.remove = function () {
 //   this.element.style.color = colour
 // }
 
+/**
+ * Used to disable content such as buttons
+ */
+
 SuperElement.prototype.disable = function () {
   this.element.disabled = true
 }
+
+/**
+ * Used to enable content such as buttons after they've been disabled
+ */
 
 SuperElement.prototype.enable = function () {
   this.element.disabled = false
