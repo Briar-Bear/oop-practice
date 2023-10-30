@@ -1,15 +1,15 @@
-import { $e } from './SuperElement'
+import { SuperElement } from './SuperElement'
 
 /**
  * @class creates input for the form
- * @extends $e
+ * @extends SuperElement
  * @param {elementTag} type - {@link elementTag}
  * @param {string} name - assigns the attribute
  * @param {Array.<Array.string>} options - a list that contains names and values to set attributes.
  */
 
-export function $i ({ type, name, options = [] }) {
-  $e.call(this, 'input')
+export function SuperInput ({ type, name, options = [] }) {
+  SuperElement.call(this, 'input')
 
   this.element.type = type
   this.element.name = name
@@ -20,4 +20,4 @@ export function $i ({ type, name, options = [] }) {
   }
 }
 
-$i.prototype = Object.create($e.prototype)
+SuperInput.prototype = Object.create(SuperElement.prototype)

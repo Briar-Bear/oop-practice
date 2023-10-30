@@ -1,19 +1,19 @@
-import { $e } from './SuperElement'
+import { SuperElement } from './SuperElement'
 
 /**
  * @class Used to create form components
- * @extends $e
+ * @extends SuperElement
  */
-export function $f () {
-  $e.call(this, 'form')
+export function SuperForm () {
+  SuperElement.call(this, 'form')
 }
 
-$f.prototype = Object.create($e.prototype)
+SuperForm.prototype = Object.create(SuperElement.prototype)
 /**
  *gets data from the form
  * @param {string} name - gets the name filled in on the form
  */
-$f.prototype.getValue = function (name) {
+SuperForm.prototype.getValue = function (name) {
   const formData = new FormData(this.element)
 
   return formData.get(name)

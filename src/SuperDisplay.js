@@ -1,23 +1,23 @@
-import { $e } from './SuperElement'
+import { SuperElement } from './SuperElement'
 
 /**
  * @class Used to align content
- * @extends $e
+ * @extends SuperElement
  * @param {string} alignment - the direction the items can be aligned
  */
-export function $d ({ alignment, direction = '' }) {
-  $e.call(this, 'div')
+export function SuperDisplay ({ alignment, direction = '' }) {
+  SuperElement.call(this, 'div')
   this.element.style.display = 'flex'
   this.element.style.flexDirection = direction
   this.alignment(alignment)
 }
 
-$d.prototype = Object.create($e.prototype)
+SuperDisplay.prototype = Object.create(SuperElement.prototype)
 /**
- * aligns items within the $d element
+ * aligns items within the SuperDisplay element
  * @param {string} alignment - the direction the items can be aligned
  */
-$d.prototype.alignment = function (alignment) {
+SuperDisplay.prototype.alignment = function (alignment) {
   if (alignment === 'centerBoth') {
     this.element.style.alignItems = 'center'
     this.element.style.justifyContent = 'center'

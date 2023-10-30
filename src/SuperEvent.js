@@ -14,18 +14,18 @@ function addListener (target, type, listener, options = {}) {
   })
 }
 
-export function $ev () {
+export function SuperEvent () {
   this.element = document.createElement('span')
 }
 
-$ev.prototype.click = function (callback, options) {
+SuperEvent.prototype.click = function (callback, options) {
   addListener(this.element, 'click', callback, options)
 }
 
-$ev.prototype.submit = function (callback, options) {
+SuperEvent.prototype.submit = function (callback, options) {
   addListener(this.element, 'submit', callback, options)
 }
 
-$ev.prototype.keyUp = function (callback, options) {
+SuperEvent.prototype.keyUp = function (callback, options) {
   addListener(this.element, 'keyup', callback, options)
 }

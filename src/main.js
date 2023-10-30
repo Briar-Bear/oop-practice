@@ -1,5 +1,4 @@
-// clear all btn doesnt work as intended
-// complete all button doesn't work as intended
+// things to do: set up Jest, document my work with JS Docs
 
 import superTypes from '../lib/main'
 
