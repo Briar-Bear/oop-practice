@@ -1,5 +1,3 @@
-// things to do: set up Jest, document my work with JS Docs
-
 import $e from '../lib/main'
 
 const toDoApp = {
