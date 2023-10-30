@@ -1,6 +1,6 @@
 // things to do: set up Jest, document my work with JS Docs
 
-import superTypes from '../lib/main'
+import $e from '../lib/main'
 
 const toDoApp = {
   list: [],
@@ -14,16 +14,16 @@ const toDoApp = {
     fontType = 'sans-serif'
   } = {}) {
     // all required elements
-    this.toDoForm = superTypes('form')
-    this.toDoContainer = superTypes('display', { alignment: 'centerBoth', direction: 'column' })
-    this.toDoHeader = superTypes('content', { type: 'h1', content: 'To Do List', font: fontType, fontSize: '16' })
-    this.toDoInput = superTypes('input', { type: 'input', name: 'to-do-text', options: [['min', minCharacterLength], ['max', maxCharacterLength]] })
-    this.submitBtn = superTypes('input', { type: 'submit', name: 'Submit' })
-    this.clearBtn = superTypes('input', { type: 'button', name: 'clearBtn', options: [['value', clearText]] })
-    this.completeAllBtn = superTypes('input', { type: 'button', name: 'completeAllBtn', options: [['value', completeText]] })
-    this.inCompleteBtn = superTypes('input', { type: 'button', name: 'UnfinishedBtn', options: [['value', unfinishedText]] })
-    this.activeBtn = superTypes('input', { type: 'button', name: 'ActiveBtn', options: [['value', 'Show Active']] })
-    this.showCompletedBtn = superTypes('input', { type: 'button', name: 'show-completed', options: [['value', 'Show Completed']] })
+    this.toDoForm = $e('form')
+    this.toDoContainer = $e('display', { alignment: 'centerBoth', direction: 'column' })
+    this.toDoHeader = $e('content', { type: 'h1', content: 'To Do List', font: fontType, fontSize: '16' })
+    this.toDoInput = $e('input', { type: 'input', name: 'to-do-text', options: [['min', minCharacterLength], ['max', maxCharacterLength]] })
+    this.submitBtn = $e('input', { type: 'submit', name: 'Submit' })
+    this.clearBtn = $e('input', { type: 'button', name: 'clearBtn', options: [['value', clearText]] })
+    this.completeAllBtn = $e('input', { type: 'button', name: 'completeAllBtn', options: [['value', completeText]] })
+    this.inCompleteBtn = $e('input', { type: 'button', name: 'UnfinishedBtn', options: [['value', unfinishedText]] })
+    this.activeBtn = $e('input', { type: 'button', name: 'ActiveBtn', options: [['value', 'Show Active']] })
+    this.showCompletedBtn = $e('input', { type: 'button', name: 'show-completed', options: [['value', 'Show Completed']] })
     // to do list appends
     this.toDoForm.appendTo(document.body)
     this.toDoContainer.appendTo(this.toDoForm)
@@ -104,10 +104,10 @@ const toDoApp = {
   formComponents () {
     const toDoText = this.toDoForm.getValue('to-do-text')
 
-    const toDoItem = superTypes('content', { type: 'li', content: toDoText, font: 'sans-serif', fontSize: '20' })
-    const deleteBtn = superTypes('input', { type: 'button', name: 'deleteBtn', options: [['value', 'X']] })
-    const completeBtn = superTypes('input', { type: 'button', name: 'completeBtn', options: [['value', 'Completed']] })
-    const reDoBtn = superTypes('input', { type: 'button', name: 'reDoBtn', options: [['value', 'Re-Do']] })
+    const toDoItem = $e('content', { type: 'li', content: toDoText, font: 'sans-serif', fontSize: '20' })
+    const deleteBtn = $e('input', { type: 'button', name: 'deleteBtn', options: [['value', 'X']] })
+    const completeBtn = $e('input', { type: 'button', name: 'completeBtn', options: [['value', 'Completed']] })
+    const reDoBtn = $e('input', { type: 'button', name: 'reDoBtn', options: [['value', 'Re-Do']] })
 
     // resets completed tasks
     reDoBtn.click(() => {
