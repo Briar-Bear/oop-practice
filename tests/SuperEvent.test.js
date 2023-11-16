@@ -11,7 +11,7 @@ test('creating an instance of SuperEvent', () => {
 
 test('click works', () => {
   const event = new SuperEvent()
-  event.click(() => {
+  const mockClick = event.click()
 
-  })
+  return mockClick
 })
