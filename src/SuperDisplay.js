@@ -10,8 +10,15 @@ export function SuperDisplay ({ position, direction = '' }) {
   this.element.style.display = 'flex'
   this.element.style.flexDirection = direction
   this.alignment(position)
+}
 
-  this.element.hashTable = {
+SuperDisplay.prototype = Object.create(SuperElement.prototype)
+/**
+ * aligns items within the SuperDisplay element
+ * @param {string} position - the direction the items can be aligned
+ */
+SuperDisplay.prototype.alignment = function (position) {
+  const hashTable = {
 
     centerBoth: () => {
       this.element.style.display = 'flex'
@@ -69,13 +76,6 @@ export function SuperDisplay ({ position, direction = '' }) {
     }
 
   }
-}
 
-SuperDisplay.prototype = Object.create(SuperElement.prototype)
-/**
- * aligns items within the SuperDisplay element
- * @param {string} position - the direction the items can be aligned
- */
-SuperDisplay.prototype.alignment = function (position) {
-  this.element.hashTable[position]()
+  return hashTable[position]
 }
