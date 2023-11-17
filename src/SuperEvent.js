@@ -1,3 +1,4 @@
+import { SuperAnimate } from './SuperAnimate'
 /**
  * @class Used to create event listeners
  * @param {HTMLElement} target - the element
@@ -20,6 +21,7 @@ export function SuperEvent () {
   this.element = document.createElement('span')
 }
 
+SuperEvent.prototype = Object.create(SuperAnimate.prototype)
 /**
  * a function that handles click events
  * @param {listener} callback - listens for event activation

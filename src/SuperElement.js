@@ -12,7 +12,7 @@ import { SuperEvent } from './SuperEvent'
  */
 export function SuperElement (type) {
   // extending the key values
-  SuperEvent.call(this)
+
   this.element = document.createElement(type)
 
   Object.defineProperty(this, 'color', {
@@ -27,8 +27,9 @@ export function SuperElement (type) {
 }
 
 /**
- * inheriting superEvent prototype
+ * inheriting superEvent and SuperAnimate prototypes
  */
+
 SuperElement.prototype = Object.create(SuperEvent.prototype)
 
 /**
