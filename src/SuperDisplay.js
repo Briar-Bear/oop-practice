@@ -9,7 +9,10 @@ export function SuperDisplay ({ position, direction = '' }) {
   SuperElement.call(this, 'div')
   this.element.style.display = 'flex'
   this.element.style.flexDirection = direction
-  this.alignment(position)
+
+  if (position) {
+    this.alignment(position)
+  }
 }
 
 SuperDisplay.prototype = Object.create(SuperElement.prototype)
@@ -77,5 +80,5 @@ SuperDisplay.prototype.alignment = function (position) {
 
   }
 
-  return hashTable[position]
+  hashTable[position]()
 }

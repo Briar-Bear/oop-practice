@@ -2,7 +2,6 @@ import $e from '../lib/main'
 
 const toDoApp = {
   list: [],
-  filteredList: [],
   start ({
     clearText = 'Clear All',
     completeText = 'Complete All',
@@ -13,7 +12,7 @@ const toDoApp = {
   } = {}) {
     // all required elements
     this.toDoForm = $e('form')
-    this.toDoContainer = $e('display', { alignment: 'centerBoth', direction: 'column' })
+    this.toDoContainer = $e('display', { position: 'centerBoth', direction: 'column' })
     this.toDoHeader = $e('content', { type: 'h1', content: 'To Do List', font: fontType, fontSize: '16' })
     this.toDoInput = $e('input', { type: 'input', name: 'to-do-text', options: [['min', minCharacterLength], ['max', maxCharacterLength]] })
     this.submitBtn = $e('input', { type: 'submit', name: 'Submit' })
@@ -65,11 +64,17 @@ const toDoApp = {
         const filter = this.list[i]
 
         if (filter.color !== 'green') {
-          this.filteredList.push(filter)
+          this.list.push(filter)
+
+          const newList = this.list.filter(filter => filter.color !== 'green')
+
+          this.list.innerHTML = ''
+
+          filter.appendTo(...newList)
         }
       }
 
-      console.log(this.filteredList)
+      console.log(this.newList)
     })
     // disable buttons
     this.clearBtn.disable()
