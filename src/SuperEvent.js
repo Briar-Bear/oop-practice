@@ -51,13 +51,3 @@ SuperEvent.prototype.submit = function (callback, options) {
 SuperEvent.prototype.keyUp = function (callback, options) {
   addListener(this.element, 'keyup', callback, options)
 }
-
-/**
- * a function that handles toggle events
- * @param {listener} callback - listens for event activation
- * @param {Object} options -  if the event does not get explicitly handled, its default action should not be taken as it normally would be
- */
-
-SuperEvent.prototype.toggle = function (callback, options) {
-  addListener(this.element, 'toggle', callback, options)
-}

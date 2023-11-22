@@ -13,6 +13,7 @@ const toDoApp = {
     // all required elements
     this.toDoForm = $e('form')
     this.toDoContainer = $e('display', { position: 'centerBoth', direction: 'column' })
+    this.toDoItemStorage = $e('content', { type: 'ol' })
     this.toDoHeader = $e('content', { type: 'h1', content: 'To Do List', font: fontType, fontSize: '16' })
     this.toDoInput = $e('input', { type: 'input', name: 'to-do-text', options: [['min', minCharacterLength], ['max', maxCharacterLength]] })
     this.submitBtn = $e('input', { type: 'submit', name: 'Submit' })
@@ -21,10 +22,12 @@ const toDoApp = {
     this.inCompleteBtn = $e('input', { type: 'button', name: 'UnfinishedBtn', options: [['value', unfinishedText]] })
     this.activeBtn = $e('input', { type: 'button', name: 'ActiveBtn', options: [['value', 'Show Active']] })
     this.showCompletedBtn = $e('input', { type: 'button', name: 'show-completed', options: [['value', 'Show Completed']] })
+    this.showAllBtn = $e('input', { type: 'button', name: 'ShowAllBtn', options: [['value', 'Show All']] })
     // to do list appends
     this.toDoForm.appendTo(document.body)
     this.toDoContainer.appendTo(this.toDoForm)
     this.toDoHeader.appendTo(this.toDoContainer)
+    this.toDoItemStorage.appendTo(this.toDoContainer)
     this.toDoInput.appendTo(this.toDoContainer)
     this.submitBtn.appendTo(this.toDoContainer)
     this.clearBtn.appendTo(this.toDoContainer)
@@ -32,6 +35,7 @@ const toDoApp = {
     this.inCompleteBtn.appendTo(this.toDoContainer)
     this.showCompletedBtn.appendTo(this.toDoContainer)
     this.activeBtn.appendTo(this.toDoContainer)
+    this.showAllBtn.appendTo(this.toDoContainer)
     // EVENT LISTENERS
     // a button that clears to-do items
     this.clearBtn.click(() => {
@@ -61,20 +65,32 @@ const toDoApp = {
 
     this.activeBtn.click(() => {
       for (let i = 0; i < this.list.length; i++) {
-        const filter = this.list[i]
+        const toDoItem = this.list[i]
 
-        if (filter.color !== 'green') {
-          this.list.push(filter)
-
-          const newList = this.list.filter(filter => filter.color !== 'green')
-
-          this.list.innerHTML = ''
-
-          filter.appendTo(...newList)
+        if (toDoItem.color !== 'green') {
+          toDoItem.appendTo(this.toDoItemStorage)
+        } else {
+          toDoItem.remove()
         }
       }
+    })
+    this.showCompletedBtn.click(() => {
+      for (let i = 0; i < this.list.length; i++) {
+        const toDoItem = this.list[i]
 
-      console.log(this.newList)
+        if (toDoItem.color === 'green') {
+          toDoItem.appendTo(this.toDoItemStorage)
+        } else {
+          toDoItem.remove()
+        }
+      }
+    })
+    this.showAllBtn.click(() => {
+      for (let i = 0; i < this.list.length; i++) {
+        const toDoItem = this.list[i]
+
+        toDoItem.appendTo(this.toDoItemStorage)
+      }
     })
     // disable buttons
     this.clearBtn.disable()
@@ -90,6 +106,8 @@ const toDoApp = {
 
       dataClear.remove()
     }
+
+    this.list = []
   },
   keyUpListener () {
     const toDoText = this.toDoForm.getValue('to-do-text')
@@ -128,12 +146,13 @@ const toDoApp = {
 
     // deletes tasks
     deleteBtn.click(() => {
+      this.list.filter(item => item !== toDoItem)
       deleteBtn.remove()
       toDoItem.remove()
       completeBtn.remove()
     })
 
-    toDoItem.appendTo(this.toDoContainer)
+    toDoItem.appendTo(this.toDoItemStorage)
     completeBtn.appendTo(toDoItem)
     deleteBtn.appendTo(toDoItem)
     reDoBtn.appendTo(toDoItem)
