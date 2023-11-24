@@ -54,7 +54,7 @@ const toDoApp = {
     })
     // a button that completes all to-do list items
     this.completeAllBtn.click(() => {
-      this.changeResult('blue', 'strike')
+      this.changeResult('green', 'strike')
       this.completeAllBtn.disable()
       this.inCompleteBtn.enable()
     })
