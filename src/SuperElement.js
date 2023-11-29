@@ -1,4 +1,9 @@
-import { SuperEvent } from './SuperEvent'
+import { SuperEvent } from './SuperEvent.js'
+
+/**
+ * @typedef {Object} Element
+ * @property {HTMLElement} element
+ */
 
 /**
  * the name of the element
@@ -6,13 +11,15 @@ import { SuperEvent } from './SuperEvent'
  */
 
 /**
- * @class creates elements
- * @extends SuperEvent
+ * @constructor creates elements
+ * @arguments SuperEvent
  * @param {elementTag} type - {@link elementTag}
  */
 export function SuperElement (type) {
   // extending the key values
-
+/**
+ * @type {HTMLElement}
+*/
   this.element = document.createElement(type)
 
   Object.defineProperty(this, 'color', {
@@ -34,7 +41,7 @@ SuperElement.prototype = Object.create(SuperEvent.prototype)
 
 /**
  * Used to append
- * @param {string} parent - appends to the parent object
+ * @param {(HTMLElement|Element)} parent - appends to the parent object
  */
 SuperElement.prototype.appendTo = function (parent) {
   if (parent.element) {
@@ -60,7 +67,7 @@ SuperElement.prototype.remove = function () {
  */
 
 SuperElement.prototype.disable = function () {
-  this.element.disabled = true
+  this.element.setAttribute('disabled', 'true')
 }
 
 /**
@@ -68,5 +75,5 @@ SuperElement.prototype.disable = function () {
  */
 
 SuperElement.prototype.enable = function () {
-  this.element.disabled = false
+  this.element.setAttribute('disabled', '')
 }

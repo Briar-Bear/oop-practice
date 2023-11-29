@@ -1,4 +1,4 @@
-import { SuperElement } from './SuperElement'
+import { SuperElement } from './SuperElement.js'
 
 /**
  * @class Used to create form components

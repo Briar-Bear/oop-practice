@@ -1,4 +1,4 @@
-import $e from '../lib/main'
+import $e from '../lib/main.js'
 
 const toDoApp = {
   list: [],
