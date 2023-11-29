@@ -2,7 +2,7 @@ import { SuperEvent } from './SuperEvent.js'
 
 /**
  * @typedef {Object} Element
- * @property {HTMLElement} element
+ * @property {HTMLDivElement} element
  */
 
 /**
@@ -41,7 +41,7 @@ SuperElement.prototype = Object.create(SuperEvent.prototype)
 
 /**
  * Used to append
- * @param {(HTMLElement|Element)} parent - appends to the parent object
+ * @param {(Element)} parent - appends to the parent object
  */
 SuperElement.prototype.appendTo = function (parent) {
   if (parent.element) {
