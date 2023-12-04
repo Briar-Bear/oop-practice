@@ -2,7 +2,7 @@ import { SuperAnimate } from './SuperAnimate.js'
 
 /**
  * @callback listener
- * @param {EventListener} event
+ * @param {Event} event
  */
 
 /**

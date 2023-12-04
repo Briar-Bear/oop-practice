@@ -4,8 +4,9 @@ import { SuperElement } from './SuperElement.js'
  * @class creates input for the form
  * @extends SuperElement
  * @param {elementTag} type - {@link elementTag}
- * @param {string} name - assigns the attribute
- * @param {Array.<Array.string>} options - a list that contains names and values to set attributes.
+ * @param {Object} options
+ * @param {string} options.name - assigns the attribute
+ * @param {Array.<Array.string>} options.options - a list that contains names and values to set attributes.
  */
 
 export function SuperInput ({ type, name, options = [] }) {

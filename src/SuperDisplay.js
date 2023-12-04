@@ -3,7 +3,9 @@ import { SuperElement } from './SuperElement.js'
 /**
  * @class Used to align content
  * @extends SuperElement
- * @param {string} position - the direction the items can be aligned
+ * @param {Object} options
+ * @param {string} options.position - the position the items can be aligned
+ * @param {string} options.direction -the direction the items can be aligned
  */
 export function SuperDisplay ({ position, direction = '' }) {
   SuperElement.call(this, 'div')

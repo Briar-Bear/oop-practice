@@ -41,7 +41,7 @@ SuperElement.prototype = Object.create(SuperEvent.prototype)
 
 /**
  * Used to append
- * @param {(Element)} parent - appends to the parent object
+ * @param {HTMLElement|Element} parent - appends to the parent object
  */
 SuperElement.prototype.appendTo = function (parent) {
   if (parent.element) {
