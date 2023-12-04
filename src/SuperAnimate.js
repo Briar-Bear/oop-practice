@@ -1,3 +1,7 @@
+/**
+ * @class - creates animation
+ */
+
 export function SuperAnimate () {}
 
 SuperAnimate.prototype.opacity = function () {
