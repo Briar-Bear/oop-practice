@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-      "checkJs": true,
       "moduleResolution": "nodenext",
       "target": "es2020",
       "module": "NodeNext",
