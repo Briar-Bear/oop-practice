@@ -2,6 +2,26 @@
 
 Super Libaray is a javascript library I have created. It started off as a way to practice coding using OOP, however it quickly became a project that I'll continue to update overtime.
 
+### SuperEvent
+
+This method allows the creation of prototypes that listen for specific events to happen to trigger. This method is inherited by SuperElement which is the catalyst for all the other methods in this library.
+
+```javascript
+const btn = $e('element', {type: 'button', name: 'exampleBtn', options: [['value', 'Example']] })
+
+const keyBtn = $e('element', {type: 'button', name: 'keyBtn', options: [['value', 'Key Up']] })
+
+btn.click(() => {
+    console.log('You have clicked the button!')
+})
+
+keyBtn.keyUp(() => {
+    console.log('You have pressed a key!')
+})
+```
+
+Please refer to https://briar-bear.github.io/super-element/docs/addListener.html for more info.
+
 ### SuperElement
 
 This method allows the creation of elements such as a div or button. SuperElement inherits from SuperEvent.
