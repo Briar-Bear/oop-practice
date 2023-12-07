@@ -4,7 +4,7 @@ Super Libaray is a javascript library I have created. It started off as a way to
 
 ###SuperElement
 
-This method allows the creation of elements such as a div or button.
+This method allows the creation of elements such as a div or button. SuperElement inherits from SuperEvent.
 
 ```javascript
  const btn = $e('element', {type: 'button', name: 'exampleBtn', options: [['value', 'Example']] })
