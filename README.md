@@ -12,11 +12,11 @@ This method allows the creation of elements such as a div or button.
  btn.appendTo(document.body)
 ```
 
-please refer to https://briar-bear.github.io/super-element/docs/SuperElement.html for more info.
+Please refer to https://briar-bear.github.io/super-element/docs/SuperElement.html for more info.
 
 ###SuperContent
 
-this method allows the creation of content. It also inherits methods from SuperElement. An example for this could be creating containers and using the appendTo() prototype to append an item inside of the container created by SuperContent.
+This method allows the creation of content. It also inherits methods from SuperElement. An example for this could be creating containers and using the appendTo() prototype to append an item inside of the container created by SuperContent.
 
 ```javascript
 const contentContainer = $e('content', { type: 'ol' })
