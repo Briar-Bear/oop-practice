@@ -1,8 +1,8 @@
-#Super Library
+# Super Library
 
 Super Libaray is a javascript library I have created. It started off as a way to practice coding using OOP, however it quickly became a project that I'll continue to update overtime.
 
-###SuperElement
+### SuperElement
 
 This method allows the creation of elements such as a div or button. SuperElement inherits from SuperEvent.
 
@@ -14,7 +14,7 @@ This method allows the creation of elements such as a div or button. SuperElemen
 
 Please refer to https://briar-bear.github.io/super-element/docs/SuperElement.html for more info.
 
-###SuperContent
+### SuperContent
 
 This method allows the creation of content. It also inherits methods from SuperElement. An example for this could be creating containers and using the appendTo() prototype to append an item inside of the container created by SuperContent.
 
@@ -29,7 +29,7 @@ btn.appendTo(contentContainer)
 
 Please refer to https://briar-bear.github.io/super-element/docs/SuperContent.html for more info.
 
-###SuperDisplay
+### SuperDisplay
 
 This method allows you to adjust the position of items on the web page. SuperDisplay also inherits from SuperElement.
 
@@ -39,7 +39,7 @@ const contentContainer = $e('display', { position: 'centerBoth', direction: 'col
 
 Please refer to https://briar-bear.github.io/super-element/docs/SuperDisplay.html for more info.
 
-###SuperForm
+### SuperForm
 
 This method allows the creation of form formats. This could be used to create an enquiry form on a web page. SuperForm also inherits from SuperElement.
 
