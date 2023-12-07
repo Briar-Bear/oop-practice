@@ -38,3 +38,21 @@ const contentContainer = $e('display', { position: 'centerBoth', direction: 'col
 ```
 
 Please refer to https://briar-bear.github.io/super-element/docs/SuperDisplay.html for more info.
+
+###SuperForm
+
+This method allows the creation of form formats. This could be used to create an enquiry form on a web page. SuperForm also inherits from SuperElement.
+
+```javascript
+const exampleForm = $e('form')
+const contentContainer = $e('display', { position: 'centerBoth', direction: 'column' })
+const formInput = $e('input', { type: 'input', name: 'text', options: [['min', 1], ['max', 20]] })
+const formBtn = $e('input', {type: 'button', name: 'submitBtn', options: [['value', 'Submit']] })
+
+exampleForm.appendTo(document.body)
+contentContainer.appendTo(exampleForm)
+formInput.appendTo(contentContainer)
+formBtn.appendTo(contentContainer)
+```
+
+Please refer to https://briar-bear.github.io/super-element/docs/SuperForm.html for more info.
