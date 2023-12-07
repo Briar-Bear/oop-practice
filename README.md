@@ -62,9 +62,27 @@ Please refer to https://briar-bear.github.io/super-element/docs/SuperForm.html f
 This allows you to add images to a webpage. It also inherits from SuperElement.
 
 ```javascript
-const exampleImg = $e('image', {src: 'place URL here', width: 100, height: 100})
+const exampleImg = $e('image', {src: 'place URL here', width: 100, height: 100}) 
 
 exampleImg.appendTo(document.body)
 ```
 
 Please refer to https://briar-bear.github.io/super-element/docs/SuperImage.html for more info.
+
+### SuperInput
+
+This method allows you to create different types of inputs such as text boxes or buttons. I created it with a purpose to work along side SuperForm to help create enquiry forms easier. This inherits from SuperElement.
+
+```javascript
+const exampleForm = $e('form') // creates the form
+const contentContainer = $e('display', { position: 'centerBoth', direction: 'column' }) // creates a container to house different inputs and aligns them to the center of the page
+const formInput = $e('input', { type: 'input', name: 'text', options: [['min', 1], ['max', 20]] }) // creates a text box
+const formBtn = $e('input', {type: 'button', name: 'submitBtn', options: [['value', 'Submit']] }) // creates a submit button
+
+exampleForm.appendTo(document.body) // appends the form to the document body
+contentContainer.appendTo(exampleForm) // appends the container to the form
+formInput.appendTo(contentContainer) // appends to text box to the container
+formBtn.appendTo(contentContainer) // appends the submit button to the container
+```
+
+Please refer to https://briar-bear.github.io/super-element/docs/SuperInput.html for more info.
