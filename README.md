@@ -56,3 +56,15 @@ formBtn.appendTo(contentContainer)
 ```
 
 Please refer to https://briar-bear.github.io/super-element/docs/SuperForm.html for more info.
+
+### SuperImage
+
+This allows you to add images to a webpage. It also inherits from SuperElement.
+
+```javascript
+const exampleImg = $e('image', {src: 'place URL here', width: 100, height: 100})
+
+exampleImg.appendTo(document.body)
+```
+
+Please refer to https://briar-bear.github.io/super-element/docs/SuperImage.html for more info.
