@@ -29,3 +29,12 @@ btn.appendTo(contentContainer)
 
 Please refer to https://briar-bear.github.io/super-element/docs/SuperContent.html for more info.
 
+###SuperDisplay
+
+This method allows you to adjust the position of items on the web page. SuperDisplay also inherits from SuperElement.
+
+```javascript
+const contentContainer = $e('display', { position: 'centerBoth', direction: 'column' })
+```
+
+Please refer to https://briar-bear.github.io/super-element/docs/SuperDisplay.html for more info.
