@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Global</title>
+    <title>JSDoc: Class: SuperEvent</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Global</h1>
+    <h1 class="page-title">Class: SuperEvent</h1>
 
     
 
@@ -28,7 +28,9 @@
 
 <header>
     
-        <h2></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>SuperEvent<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">creates an element</div>
         
     
 </header>
@@ -38,7 +40,32 @@
     
         
 
-        
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="SuperEvent"><span class="type-signature"></span>new SuperEvent<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Used to create event listeners
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <dl class="details">
@@ -68,6 +95,11 @@
     
 
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="SuperEvent.js.html">SuperEvent.js</a>, <a href="SuperEvent.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
 
     
 
@@ -77,7 +109,24 @@
 </dl>
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     </div>
 
@@ -104,12 +153,16 @@
     
 
     
-    <h4 class="name" id="addListener"><span class="type-signature"></span>addListener<span class="signature">(target, listener, options, type)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="click"><span class="type-signature"></span>click<span class="signature">(callback, options)</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    a function that handles click events
+</div>
 
 
 
@@ -144,30 +197,7 @@
 
         <tr>
             
-                <td class="name"><code>target</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">HTMLElement</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the element</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>listener</code></td>
+                <td class="name"><code>callback</code></td>
             
 
             <td class="type">
@@ -210,29 +240,6 @@
         </tr>
 
     
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
     </tbody>
 </table>
 
@@ -270,7 +277,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="SuperEvent.js.html">SuperEvent.js</a>, <a href="SuperEvent.js.html#line19">line 19</a>
+        <a href="SuperEvent.js.html">SuperEvent.js</a>, <a href="SuperEvent.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -301,215 +308,21 @@
 
 
         
-    
-
-    
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        
-                
-<h4 class="name" id="Element">Element</h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>element</code></td>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">HTMLDivElement</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
     
 
     
-
+    <h4 class="name" id="keyUp"><span class="type-signature"></span>keyUp<span class="signature">(callback, options)</span><span class="type-signature"></span></h4>
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="SuperElement.js.html">SuperElement.js</a>, <a href="SuperElement.js.html#line3">line 3</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-                
-<h4 class="name" id="elementTag">elementTag</h4>
-
 
 
 
 <div class="description">
-    the name of the element
+    a function that handles keyUp events
 </div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="SuperElement.js.html">SuperElement.js</a>, <a href="SuperElement.js.html#line8">line 8</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-                
-
-    
-
-    
-    <h4 class="name" id="listener"><span class="type-signature"></span>listener<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
 
 
 
@@ -544,13 +357,13 @@
 
         <tr>
             
-                <td class="name"><code>event</code></td>
+                <td class="name"><code>callback</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Event</span>
+<span class="param-type"><a href="global.html#listener">listener</a></span>
 
 
             
@@ -560,7 +373,30 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">listens for event activation</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#listenerOptions">listenerOptions</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">if the event does not get explicitly handled, its default action should not be taken as it normally would be</td>
         </tr>
 
     
@@ -601,7 +437,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="SuperEvent.js.html">SuperEvent.js</a>, <a href="SuperEvent.js.html#line3">line 3</a>
+        <a href="SuperEvent.js.html">SuperEvent.js</a>, <a href="SuperEvent.js.html#line64">line 64</a>
     </li></ul></dd>
     
 
@@ -631,38 +467,35 @@
 
 
 
+        
             
-                
-<h4 class="name" id="listenerOptions">listenerOptions</h4>
 
+    
+
+    
+    <h4 class="name" id="submit"><span class="type-signature"></span>submit<span class="signature">(callback, options)</span><span class="type-signature"></span></h4>
+    
+
+    
 
 
 
 <div class="description">
-    if the event does not get explicitly handled, its default action should not be taken as it normally would be
+    a function that handles submit events
 </div>
 
 
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
 
 
 
 
 
-    <h5 class="subsection-title">Properties:</h5>
 
+    <h5>Parameters:</h5>
     
 
-<table class="props">
+<table class="params">
     <thead>
     <tr>
         
@@ -671,8 +504,6 @@
 
         <th>Type</th>
 
-        
-        <th>Attributes</th>
         
 
         
@@ -686,36 +517,53 @@
 
         <tr>
             
-                <td class="name"><code>preventDefault</code></td>
+                <td class="name"><code>callback</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="global.html#listener">listener</a></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
 
+            
+
+            <td class="description last">listens for event activation</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
                 
-                </td>
+<span class="param-type"><a href="global.html#listenerOptions">listenerOptions</a></span>
+
+
+            
+            </td>
+
             
 
             
 
-            <td class="description last">Runs the PreventDefault method <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault</a></td>
+            <td class="description last">if the event does not get explicitly handled, its default action should not be taken as it normally would be</td>
         </tr>
 
     
     </tbody>
 </table>
+
+
 
 
 
@@ -749,7 +597,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="SuperEvent.js.html">SuperEvent.js</a>, <a href="SuperEvent.js.html#line8">line 8</a>
+        <a href="SuperEvent.js.html">SuperEvent.js</a>, <a href="SuperEvent.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -765,7 +613,23 @@
 
 
 
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
     
 
     
