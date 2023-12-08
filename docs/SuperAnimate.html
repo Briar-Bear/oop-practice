@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: SuperInput.js</title>
+    <title>JSDoc: Class: SuperAnimate</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,41 +17,137 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: SuperInput.js</h1>
+    <h1 class="page-title">Class: SuperAnimate</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import { SuperElement } from './SuperElement.js'
+        <h2><span class="attribs"><span class="type-signature"></span></span>SuperAnimate<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">- creates animation</div>
+        
+    
+</header>
 
-/**
- * @class creates input for the form
- * @extends SuperElement
- * @param {elementTag} type - {@link elementTag}
- * @param {Object} options
- * @param {string} options.name - assigns the attribute
- * @param {Array.&lt;Array.string>} options.options - a list that contains names and values to set attributes.
- */
-export function SuperInput ({ type, name, options = [] }) {
-  SuperElement.call(this, 'input')
+<article>
+    <div class="container-overview">
+    
+        
 
-  this.element.type = type
-  this.element.name = name
+    
+    <h2>Constructor</h2>
+    
 
-  for (let i = 0; i &lt; options.length; i++) {
-    const [name, value] = options[i]
-    this.element.setAttribute(name, value)
-  }
-}
+    
+    <h4 class="name" id="SuperAnimate"><span class="type-signature"></span>new SuperAnimate<span class="signature">()</span><span class="type-signature"></span></h4>
+    
 
-SuperInput.prototype = Object.create(SuperElement.prototype)
-</code></pre>
-        </article>
-    </section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="SuperAnimate.js.html">SuperAnimate.js</a>, <a href="SuperAnimate.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
