@@ -1,3 +1,4 @@
+import { expect, test, jest } from '@jest/globals'
 import $e from '../lib/main.js'
 import { SuperInput } from '../lib/SuperInput.js'
 
@@ -14,4 +15,7 @@ test('click event works!', () => {
   clicker.click(() => {
     mockCallback()
   })
+  expect(mockCallback.mock.calls).toHaveLength(1)
 })
+
+elem.onclick.apply(elem)
