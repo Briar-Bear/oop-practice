@@ -12,10 +12,7 @@ test('creating an instance of SuperInput', () => {
 test('click event works!', () => {
   const clicker = $e('input', { type: 'button', name: 'testClick' })
   const mockCallback = jest.fn(() => {})
-  clicker.click(() => {
-    mockCallback()
-  })
+  clicker.click.apply(mockCallback)
+
   expect(mockCallback.mock.calls).toHaveLength(1)
 })
-
-elem.onclick.apply(elem)
