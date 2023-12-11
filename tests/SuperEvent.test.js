@@ -1,4 +1,4 @@
-import { SuperEvent } from '../src/SuperEvent'
+import { SuperEvent } from '../lib/SuperEvent.js'
 
 /**
  * @jest-environment jsdom
