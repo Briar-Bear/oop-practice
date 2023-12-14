@@ -28,3 +28,14 @@ test('keyUp event works!', () => {
 
   expect(mockCallback.mock.calls).toHaveLength(1)
 })
+
+// testing the disable method
+
+test('disable works!', () => {
+  const disabler = $e('input', { type: 'button', name: 'testDisable' })
+  const mockCallback = jest.fn(() => {})
+  disabler.disable(mockCallback)
+  disabler.element.click.apply(disabler.element)
+
+  expect(disabler.element).toHaveProperty('disabled', true)
+})
