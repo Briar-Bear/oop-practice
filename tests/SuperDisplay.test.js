@@ -3,6 +3,6 @@ import $e from '../lib/main.js'
 import { SuperDisplay } from '../lib/SuperDisplay.js'
 
 test('creating an instance of SuperDisplay', () => {
-  const display = $e('display', {})
-  expect(display.constructor).toBe(SuperDisplay)
+  const form = $e('form', {})
+  expect(form.constructor).toBe(SuperDisplay)
 })
