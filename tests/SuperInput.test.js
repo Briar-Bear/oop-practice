@@ -39,3 +39,25 @@ test('disable works!', () => {
 
   expect(disabler.element).toHaveProperty('disabled', true)
 })
+
+// testing the enable method - NOT WORKING
+
+// test('enabler works!', () => {
+//   const enabler = $e('input', { type: 'button', name: 'testEnable' })
+//   const mockCallback = jest.fn(() => {})
+//   enabler.enable(mockCallback)
+//   enabler.element.click.apply(enabler.element)
+
+//   expect(enabler.element).toHaveProperty('disabled', false)
+// })
+
+// testing the remove method
+
+test('remove works!', () => {
+  const remover = $e('input', { type: 'button', name: 'testRemove' })
+  const mockCallback = jest.fn(() => {})
+  remover.remove(mockCallback)
+  remover.element.click.apply(remover.element)
+
+  expect(remover.element).toHaveProperty('removed', true)
+})
