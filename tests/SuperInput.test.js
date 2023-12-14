@@ -17,3 +17,14 @@ test('click event works!', () => {
 
   expect(mockCallback.mock.calls).toHaveLength(1)
 })
+
+// testing the keyUp prototype
+
+test('keyUp event works!', () => {
+  const keyListener = $e('input', { type: 'button', name: 'testKeyUp' })
+  const mockCallback = jest.fn(() => {})
+  keyListener.click(mockCallback)
+  keyListener.element.click.apply(keyListener.element)
+
+  expect(mockCallback.mock.calls).toHaveLength(1)
+})
