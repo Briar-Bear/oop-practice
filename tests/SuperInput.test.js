@@ -7,7 +7,7 @@ test('should create an instance of SuperInput', () => {
   expect(input.constructor).toBe(SuperInput)
 })
 
-// testing the submit prototype from SuperEvent
+// testing the submit prototype from SuperEvent - DOESNT WORK
 
 test('should listen for the submit event.', () => {
   const submitBtn = $e('submit', { type: 'button', name: 'testSubmit' })
