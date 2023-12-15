@@ -2,14 +2,14 @@ import { expect, test, jest } from '@jest/globals'
 import $e from '../lib/main.js'
 import { SuperInput } from '../lib/SuperInput.js'
 
-test('creating an instance of SuperInput', () => {
+test('should create an instance of SuperInput', () => {
   const input = $e('input', {})
   expect(input.constructor).toBe(SuperInput)
 })
 
 // testing the click prototype from SuperEvent
 
-test('click event works!', () => {
+test('should listen for the click event.', () => {
   const clicker = $e('input', { type: 'button', name: 'testClick' })
   const mockCallback = jest.fn(() => {})
   clicker.click(mockCallback)
@@ -20,7 +20,7 @@ test('click event works!', () => {
 
 // testing the keyUp prototype
 
-test('keyUp event works!', () => {
+test('should listen for the keyUp event.', () => {
   const keyListener = $e('input', { type: 'button', name: 'testKeyUp' })
   const mockCallback = jest.fn(() => {})
   keyListener.click(mockCallback)
@@ -31,33 +31,26 @@ test('keyUp event works!', () => {
 
 // testing the disable method
 
-test('disable works!', () => {
+test('should apply the disabled attribute to the element.', () => {
   const disabler = $e('input', { type: 'button', name: 'testDisable' })
-  const mockCallback = jest.fn(() => {})
-  disabler.disable(mockCallback)
-  disabler.element.click.apply(disabler.element)
-
+  disabler.disable()
   expect(disabler.element).toHaveProperty('disabled', true)
 })
 
 // testing the enable method - NOT WORKING
 
-// test('enabler works!', () => {
-//   const enabler = $e('input', { type: 'button', name: 'testEnable' })
-//   const mockCallback = jest.fn(() => {})
-//   enabler.enable(mockCallback)
-//   enabler.element.click.apply(enabler.element)
-
-//   expect(enabler.element).toHaveProperty('disabled', false)
-// })
+test('should remove the disabled attribute from the element.', () => {
+  const enabler = $e('input', { type: 'button', name: 'testEnable' })
+  enabler.enable()
+  expect(enabler.element).toHaveProperty('disabled', false)
+})
 
 // testing the remove method
 
-test('remove works!', () => {
+test('should remove elements', () => {
   const remover = $e('input', { type: 'button', name: 'testRemove' })
-  const mockCallback = jest.fn(() => {})
-  remover.remove(mockCallback)
-  remover.element.click.apply(remover.element)
-
-  expect(remover.element).toHaveProperty('removed', true)
+  const container = $e('content', { type: 'div' })
+  remover.appendTo(container)
+  remover.remove()
+  expect(container.element.childNodes).toHaveLength(0)
 })
