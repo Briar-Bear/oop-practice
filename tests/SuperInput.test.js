@@ -45,6 +45,15 @@ test('should remove the disabled attribute from the element.', () => {
   expect(enabler.element).toHaveProperty('disabled', false)
 })
 
+// testing the appendTo method
+
+test('should append elements', () => {
+  const appendTest = $e('input', { type: 'button', name: 'testAppend' })
+  const container = $e('content', { type: 'div' })
+  appendTest.appendTo(container)
+  expect(container.element.childNodes).toHaveLength(1)
+})
+
 // testing the remove method
 
 test('should remove elements', () => {
