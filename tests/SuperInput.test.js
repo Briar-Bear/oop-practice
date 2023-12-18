@@ -65,4 +65,11 @@ test('should remove elements', () => {
 })
 
 // testing the options arg
-test()
+
+test('should retrieve set options', () => {
+  const input = $e('input', { type: 'text', name: 'inputTest', options: [['value', 'test']] })
+
+  const getInput = input.element.getAttribute('name', 'value')
+
+  expect(getInput).toBe('inputTest', 'value')
+})
