@@ -9,11 +9,10 @@ test('creating an instance of SuperImage', () => {
 
 // test to check if adding an image works - DOESN'T WORK
 
-test('should add an image ', () => {
-  const image = $e('image', { src: 'imagePlaceHolder' })
-  const container = $e('content', { type: 'div' })
+test('should add an image and dimensions ', () => {
+  const image = $e('image', { src: 'imagePlaceHolder', height: 10, width: 10 })
 
-  image.appendTo(container)
-
-  expect(image).toContain('imagePlaceHolder')
+  expect(image.element.src).toBe('http://localhost/imagePlaceHolder')
+  expect(image.element.height).toBe('10')
+  expect(image.element.width).toBe('10')
 })
