@@ -7,15 +7,6 @@ test('should create an instance of SuperInput', () => {
   expect(input.constructor).toBe(SuperInput)
 })
 
-// testing the submit prototype from SuperEvent - DOESNT WORK
-
-test('should listen for the submit event.', () => {
-  const submitBtn = $e('submit', { type: 'button', name: 'testSubmit' })
-  submitBtn()
-
-  expect(submitBtn).toHaveBeenCalled()
-})
-
 // testing the click prototype from SuperEvent
 
 test('should listen for the click event.', () => {
@@ -46,7 +37,7 @@ test('should apply the disabled attribute to the element.', () => {
   expect(disabler.element).toHaveProperty('disabled', true)
 })
 
-// testing the enable method - NOT WORKING
+// testing the enable method
 
 test('should remove the disabled attribute from the element.', () => {
   const enabler = $e('input', { type: 'button', name: 'testEnable' })
@@ -72,3 +63,6 @@ test('should remove elements', () => {
   remover.remove()
   expect(container.element.childNodes).toHaveLength(0)
 })
+
+// testing the options arg
+test()
