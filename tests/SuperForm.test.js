@@ -3,8 +3,8 @@ import $e from '../lib/main.js'
 import { SuperForm } from '../lib/SuperForm.js'
 
 test('creating an instance of SuperForm', () => {
-  const content = $e('form')
-  expect(content.constructor).toBe(SuperForm)
+  const form = $e('form')
+  expect(form.constructor).toBe(SuperForm)
 })
 
 // testing the submit prototype from SuperForm
