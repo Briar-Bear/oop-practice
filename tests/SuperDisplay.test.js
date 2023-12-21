@@ -60,7 +60,7 @@ test('content should align to the top', () => {
   content.alignment('top')
 
   expect(content.element.style.display).toBe('flex')
-  expect(content.element.style.alignItems).toBe('center')
+  expect(content.element.style.alignItems).toBe('flex-start')
 })
 
 // top center
