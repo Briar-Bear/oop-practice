@@ -12,7 +12,7 @@ test('creating an instance of SuperContent', () => {
 test('should strike out content', () => {
   const content = $e('content', { type: 'h1', content: 'Test' })
 
-  content.strike()
+  content.strike('strike')
 
-  expect(content.element).toBe('line-through')
+  expect(content.element.style.textDecorationLine).toBe('line-through')
 })

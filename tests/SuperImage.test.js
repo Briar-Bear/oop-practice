@@ -13,6 +13,6 @@ test('should add an image and dimensions ', () => {
   const image = $e('image', { src: 'imagePlaceHolder', height: 10, width: 10 })
 
   expect(image.element.src).toBe('http://localhost/imagePlaceHolder')
-  expect(image.element.height).toBe('10')
-  expect(image.element.width).toBe('10')
+  expect(image.element.style.height).toBe('10px')
+  expect(image.element.style.width).toBe('10px')
 })

@@ -7,13 +7,24 @@ test('creating an instance of SuperDisplay', () => {
   expect(display.constructor).toBe(SuperDisplay)
 })
 
-// testing the alignment - UNDEFINED
+// testing the direction
 
-test('should center content', () => {
-  const content = $e('display', { position: 'centerBoth', direction: 'column' })
+test('content should be a column ', () => {
+  const content = $e('display', { direction: 'column' })
   const button = $e('input', { type: 'button', name: 'test' })
 
   button.appendTo(content)
 
-  expect(button.element.position).toBe('centerBoth')
+  expect(content.element.style.flexDirection).toBe('column')
+})
+
+// testing the alignment
+
+test('content should align to center', () => {
+  const content = $e('display')
+  content.alignment('centerBoth')
+
+  expect(content.element.style.display).toBe('flex')
+  expect(content.element.style.justifyContent).toBe('center')
+  expect(content.element.style.alignItems).toBe('center')
 })
