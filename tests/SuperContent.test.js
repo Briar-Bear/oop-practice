@@ -7,7 +7,7 @@ test('creating an instance of SuperContent', () => {
   expect(content.constructor).toBe(SuperContent)
 })
 
-// testing the strike method - DOESNT WORK
+// testing the strike method
 
 test('should strike out content', () => {
   const content = $e('content', { type: 'h1', content: 'Test' })
@@ -15,4 +15,14 @@ test('should strike out content', () => {
   content.strike('strike')
 
   expect(content.element.style.textDecorationLine).toBe('line-through')
+})
+
+// to reverse the strike method
+
+test('should unstrike the content', () => {
+  const content = $e('content', { type: 'h1', content: 'Test' })
+
+  content.strike('unStrike')
+
+  expect(content.element.style.textDecorationLine).toBe('none')
 })
