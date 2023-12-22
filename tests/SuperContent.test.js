@@ -26,3 +26,13 @@ test('should unstrike the content', () => {
 
   expect(content.element.style.textDecorationLine).toBe('none')
 })
+
+// testing the colour getter and setter
+
+test('if colour has been gotten', () => {
+  const content = $e('content', { type: 'h1', content: 'test' })
+
+  content.color = 'blue'
+
+  expect(content.color).toBe('blue')
+})

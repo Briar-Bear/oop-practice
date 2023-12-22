@@ -54,6 +54,16 @@ test('should append elements', () => {
   expect(container.element.childNodes).toHaveLength(1)
 })
 
+// testing the appendTo method without the super constructors
+
+test('should append content', () => {
+  const content = $e('content')
+
+  content.appendTo(document.createElement('div'))
+
+  expect(content.element.childNodes).toHaveLength(1)
+})
+
 // testing the remove method
 
 test('should remove elements', () => {
@@ -69,7 +79,7 @@ test('should remove elements', () => {
 test('should retrieve set options', () => {
   const input = $e('input', { type: 'text', name: 'inputTest', options: [['value', 'test']] })
 
-  const getInput = input.element.getAttribute('name', 'value')
+  const getInput = input.element.getAttribute('value')
 
-  expect(getInput).toBe('inputTest', 'value')
+  expect(getInput).toBe('test')
 })

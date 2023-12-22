@@ -7,15 +7,22 @@ test('creating an instance of SuperDisplay', () => {
   expect(display.constructor).toBe(SuperDisplay)
 })
 
-// testing the direction
+// testing the direction arguement
 
 test('content should be a column ', () => {
   const content = $e('display', { direction: 'column' })
-  const button = $e('input', { type: 'button', name: 'test' })
-
-  button.appendTo(content)
 
   expect(content.element.style.flexDirection).toBe('column')
+})
+
+// testing the position arguement
+
+test('position should call for centerBoth', () => {
+  const content = $e('display', { position: 'centerBoth' })
+
+  expect(content.element.style.display).toBe('flex')
+  expect(content.element.style.alignItems).toBe('center')
+  expect(content.element.style.justifyContent).toBe('center')
 })
 
 // testing the alignment

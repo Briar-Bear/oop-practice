@@ -19,7 +19,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "docs": "jsdoc -c jsdoc.json",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage=true --coverageDirectory=./coverage"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
