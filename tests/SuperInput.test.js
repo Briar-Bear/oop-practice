@@ -58,10 +58,11 @@ test('should append elements', () => {
 
 test('should append content', () => {
   const content = $e('content')
+  const append = document.createElement('div')
 
-  content.appendTo(document.createElement('div'))
+  content.appendTo(append)
 
-  expect(content.element.childNodes).toHaveLength(1)
+  expect(append.childNodes).toHaveLength(1)
 })
 
 // testing the remove method
