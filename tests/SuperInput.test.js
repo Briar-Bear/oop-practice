@@ -84,3 +84,13 @@ test('should retrieve set options', () => {
 
   expect(getInput).toBe('test')
 })
+
+// testing options
+test('should test preventDefault to be true', () => {
+  const input = $e('input', { type: 'button', name: 'btnTest', options: [['value', test]] })
+  const mockCallback = jest.fn(() => {})
+
+  input.click(mockCallback, { preventDefault: true })
+  input.element.click()
+  expect(mockCallback.mock.calls).toHaveLength(1)
+})
