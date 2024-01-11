@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1704905729293" clover="3.2.0">
-  <project timestamp="1704905729293" name="All files">
-    <metrics statements="107" coveredstatements="105" conditionals="18" coveredconditionals="17" methods="34" coveredmethods="32" elements="159" coveredelements="154" complexity="0" loc="107" ncloc="107" packages="1" files="10" classes="10"/>
+<coverage generated="1704972727531" clover="3.2.0">
+  <project timestamp="1704972727531" name="All files">
+    <metrics statements="107" coveredstatements="106" conditionals="18" coveredconditionals="17" methods="34" coveredmethods="33" elements="159" coveredelements="156" complexity="0" loc="107" ncloc="107" packages="1" files="10" classes="10"/>
     <file name="SuperBoxMaker.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperBoxMaker.js">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="12" count="1" type="stmt"/>
@@ -71,8 +71,8 @@
     </file>
     <file name="SuperElement.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperElement.js">
       <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
-      <line num="24" count="37" type="stmt"/>
-      <line num="26" count="37" type="stmt"/>
+      <line num="24" count="38" type="stmt"/>
+      <line num="26" count="38" type="stmt"/>
       <line num="28" count="1" type="stmt"/>
       <line num="32" count="1" type="stmt"/>
       <line num="41" count="6" type="stmt"/>
@@ -89,12 +89,12 @@
       <line num="80" count="1" type="stmt"/>
     </file>
     <file name="SuperEvent.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperEvent.js">
-      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <line num="10" count="0" type="stmt"/>
-      <line num="20" count="6" type="stmt"/>
-      <line num="21" count="3" type="stmt"/>
-      <line num="30" count="6" type="stmt"/>
-      <line num="31" count="0" type="stmt"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="28" count="6" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
     </file>
     <file name="SuperForm.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperForm.js">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -118,23 +118,23 @@
     </file>
     <file name="SuperInput.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperInput.js">
       <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <line num="13" count="10" type="stmt"/>
-      <line num="14" count="10" type="stmt"/>
-      <line num="15" count="10" type="stmt"/>
-      <line num="17" count="10" type="stmt"/>
-      <line num="18" count="3" type="stmt"/>
-      <line num="19" count="3" type="stmt"/>
+      <line num="13" count="11" type="stmt"/>
+      <line num="14" count="11" type="stmt"/>
+      <line num="15" count="11" type="stmt"/>
+      <line num="17" count="11" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
       <line num="23" count="6" type="stmt"/>
       <line num="25" count="6" type="stmt"/>
     </file>
     <file name="main.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\main.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="8" count="6" type="stmt"/>
-      <line num="18" count="37" type="stmt"/>
+      <line num="18" count="39" type="stmt"/>
     </file>
     <file name="utils.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\utils.js">
       <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
-      <line num="18" count="4" type="stmt"/>
+      <line num="18" count="5" type="stmt"/>
       <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
       <line num="20" count="1" type="stmt"/>
       <line num="22" count="4" type="stmt"/>

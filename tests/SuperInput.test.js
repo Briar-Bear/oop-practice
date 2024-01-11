@@ -87,10 +87,28 @@ test('should retrieve set options', () => {
 
 // testing options
 test('should test preventDefault to be true', () => {
-  const input = $e('input', { type: 'button', name: 'btnTest', options: [['value', test]] })
+  const input = $e('input', { type: 'button', name: 'btnTest', options: [['value', 'test']] })
   const mockCallback = jest.fn(() => {})
 
   input.click(mockCallback, { preventDefault: true })
   input.element.click()
   expect(mockCallback.mock.calls).toHaveLength(1)
+})
+
+// testing superEvent element
+
+test('should test for addListener keyUp function', () => {
+  const input = $e('input', { type: 'button', name: 'btnTest', options: [['value', 'test']] })
+  const mockCallback = jest.fn(() => {})
+
+  input.keyUp(mockCallback, { preventDefault: true })
+  input.element.keyUp()
+  expect(mockCallback.mock.calls).toHaveLength(1)
+})
+
+// testing SuperEvents element
+
+test('should test SuperEvents element', () => {
+  const event = $e('event')
+  expect(event.element).toBe('span')
 })
