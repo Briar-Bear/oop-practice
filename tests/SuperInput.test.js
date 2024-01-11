@@ -102,7 +102,7 @@ test('should test for addListener keyUp function', () => {
   const mockCallback = jest.fn(() => {})
 
   input.keyUp(mockCallback, { preventDefault: true })
-  input.element.keyUp()
+  input.element.keyUp(input.element)
   expect(mockCallback.mock.calls).toHaveLength(1)
 })
 
