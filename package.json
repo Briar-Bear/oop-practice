@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "main.js"
   ],
-  "main": "./dist/super-element.umd.cjs",
+  "main": "./lib/main.js",
   "module": "./dist/super-element.js",
   "exports": {
     ".": {
