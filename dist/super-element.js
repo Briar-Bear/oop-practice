@@ -41,7 +41,7 @@ n.prototype.disable = function() {
 n.prototype.enable = function() {
   this.element.removeAttribute("disabled", "");
 };
-function m({ type: e, name: t, options: l = [] }) {
+function m({ type: e, name: t, options: l = [] } = {}) {
   n.call(this, "input", l), this.element.type = e, this.element.name = t;
 }
 m.prototype = Object.create(n.prototype);
@@ -96,7 +96,7 @@ p.prototype.alignment = function(e) {
     }
   })[e]();
 };
-function o({ options: e = [] }) {
+function o({ options: e = [] } = {}) {
   n.call(this, "form", e);
 }
 o.prototype = Object.create(n.prototype);
@@ -112,7 +112,7 @@ function y(e, t, l) {
 }
 y.prototype = Object.create(n.prototype);
 y.prototype.constructor = y;
-function c({ src: e, width: t, height: l, options: s = [] }) {
+function c({ src: e, width: t, height: l, options: s = [] } = {}) {
   n.call(this, "img", s), this.element.src = e, this.element.style.width = t + "px", this.element.style.height = l + "px";
 }
 c.prototype = Object.create(n.prototype);
