@@ -1,62 +1,34 @@
-function r() {
-}
-r.prototype.opacity = function() {
-  this.element.animate(
-    "keyframes",
-    [
-      {
-        opacity: 0
-      },
-      {
-        opacity: 1
-      }
-    ],
-    2e3
-  );
-};
-r.prototype.keyframeDown = function() {
-  this.element.animate(
-    "keyframes",
-    [
-      {
-        transform: "translateY(0%)"
-      },
-      {
-        transform: "translateY(100%)"
-      }
-    ],
-    { duration: 3e3, fill: "forwards" }
-  );
-};
-function m(e, t, l, s = {}) {
-  e.addEventListener(t, (o) => {
-    s.preventDefault && o.preventDefault(), l(o);
+function h(e, t, l, s = {}) {
+  e.addEventListener(t, (i) => {
+    s.preventDefault && i.preventDefault(), l(i);
   });
 }
-function i() {
+function a() {
   this.element = document.createElement("span");
 }
-i.prototype = Object.create(r.prototype);
-i.prototype.click = function(e, t) {
-  m(this.element, "click", e, t);
+a.prototype.click = function(e, t) {
+  h(this.element, "click", e, t);
 };
-i.prototype.submit = function(e, t) {
-  m(this.element, "submit", e, t);
+a.prototype.keyUp = function(e, t) {
+  h(this.element, "keyup", e, t);
 };
-i.prototype.keyUp = function(e, t) {
-  m(this.element, "keyup", e, t);
-};
-function n(e) {
-  this.element = document.createElement(e), Object.defineProperty(this, "color", {
+function n(e, t = []) {
+  this.element = document.createElement(e);
+  for (let l = 0; l < t.length; l++) {
+    const [s, i] = t[l];
+    this.element.setAttribute(s, i);
+  }
+  Object.defineProperty(this, "color", {
     get: function() {
       return this.element.style.color;
     },
-    set: (t) => {
-      this.element.style.color = t;
+    set: (l) => {
+      this.element.style.color = l;
     }
   });
 }
-n.prototype = Object.create(i.prototype);
+n.prototype = Object.create(a.prototype);
+n.prototype.constructor = n;
 n.prototype.appendTo = function(e) {
   e.element ? e.element.append(this.element) : e.append(this.element);
 };
@@ -64,30 +36,29 @@ n.prototype.remove = function() {
   this.element.remove();
 };
 n.prototype.disable = function() {
-  this.element.disabled = !0;
+  this.element.setAttribute("disabled", "");
 };
 n.prototype.enable = function() {
-  this.element.disabled = !1;
+  this.element.removeAttribute("disabled", "");
 };
-function h({ type: e, name: t, options: l = [] }) {
-  n.call(this, "input"), this.element.type = e, this.element.name = t;
-  for (let s = 0; s < l.length; s++) {
-    const [o, u] = l[s];
-    this.element.setAttribute(o, u);
-  }
+function m({ type: e, name: t, options: l = [] }) {
+  n.call(this, "input", l), this.element.type = e, this.element.name = t;
 }
-h.prototype = Object.create(n.prototype);
-function y({ type: e, content: t = "", font: l = "", fontSize: s = 16 }) {
-  n.call(this, e), this.element.style.fontFamily = l, this.element.style.fontSize = s + "px", this.element.innerText = t;
+m.prototype = Object.create(n.prototype);
+m.prototype.constructor = m;
+function r({ type: e, content: t = "", font: l = "", fontSize: s = 16, options: i = [] } = {}) {
+  n.call(this, e, i), this.element.type = e, this.element.style.fontFamily = l, this.element.style.fontSize = s + "px", this.element.innerText = t;
 }
-y.prototype = Object.create(n.prototype);
-y.prototype.strike = function(e) {
+r.prototype = Object.create(n.prototype);
+r.prototype.constructor = r;
+r.prototype.strike = function(e) {
   e === "strike" ? this.element.style.textDecorationLine = "line-through" : e === "unStrike" && (this.element.style.textDecorationLine = "none");
 };
-function p({ position: e, direction: t = "" }) {
-  n.call(this, "div"), this.element.style.display = "flex", this.element.style.flexDirection = t, e && this.alignment(e);
+function p({ position: e, direction: t = "", options: l = [] } = {}) {
+  n.call(this, "div", l), this.element.style.display = "flex", this.element.style.flexDirection = t, e && this.alignment(e);
 }
 p.prototype = Object.create(n.prototype);
+p.prototype.constructor = p;
 p.prototype.alignment = function(e) {
   ({
     centerBoth: () => {
@@ -125,29 +96,35 @@ p.prototype.alignment = function(e) {
     }
   })[e]();
 };
-function a() {
-  n.call(this, "form");
+function o({ options: e = [] }) {
+  n.call(this, "form", e);
 }
-a.prototype = Object.create(n.prototype);
-a.prototype.getValue = function(e) {
+o.prototype = Object.create(n.prototype);
+o.prototype.getValue = function(e) {
   return new FormData(this.element).get(e);
 };
-function f(e, t, l) {
+o.prototype.submit = function(e, t) {
+  h(this.element, "submit", e, t);
+};
+o.prototype.constructor = o;
+function y(e, t, l) {
   n.call(this, "div"), this.element.style.backgroundColor = e, this.element.style.width = t + "px", this.element.style.height = l + "px";
 }
-f.prototype = Object.create(n.prototype);
-function c({ src: e, width: t, height: l }) {
-  n.call(this, "img"), this.element.src = e, this.element.style.width = t + "px", this.element.style.height = l + "px";
+y.prototype = Object.create(n.prototype);
+y.prototype.constructor = y;
+function c({ src: e, width: t, height: l, options: s = [] }) {
+  n.call(this, "img", s), this.element.src = e, this.element.style.width = t + "px", this.element.style.height = l + "px";
 }
 c.prototype = Object.create(n.prototype);
-const d = {
-  input: h,
-  content: y,
+c.prototype.constructor = c;
+const f = {
+  input: m,
+  content: r,
   display: p,
-  form: a,
-  box: f,
+  form: o,
+  box: y,
   image: c
-}, x = (e, t) => new d[e](t);
+}, u = (e, t) => new f[e](t);
 export {
-  x as default
+  u as default
 };
