@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1712849933295" clover="3.2.0">
-  <project timestamp="1712849933296" name="All files">
+<coverage generated="1712857357218" clover="3.2.0">
+  <project timestamp="1712857357219" name="All files">
     <metrics statements="108" coveredstatements="107" conditionals="26" coveredconditionals="23" methods="34" coveredmethods="33" elements="168" coveredelements="163" complexity="0" loc="108" ncloc="108" packages="1" files="10" classes="10"/>
     <file name="SuperBoxMaker.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperBoxMaker.js">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
