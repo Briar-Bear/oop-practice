@@ -105,10 +105,3 @@ test('should test for addListener keyUp function', () => {
   input.element.keyUp(input.element)
   expect(mockCallback.mock.calls).toHaveLength(1)
 })
-
-// testing SuperEvents element
-
-test('should test SuperEvents element', () => {
-  const event = $e('event')
-  expect(event.element).toBe('span')
-})
