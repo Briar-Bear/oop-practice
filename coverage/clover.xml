@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1704984544181" clover="3.2.0">
-  <project timestamp="1704984544181" name="All files">
-    <metrics statements="107" coveredstatements="106" conditionals="18" coveredconditionals="17" methods="34" coveredmethods="33" elements="159" coveredelements="156" complexity="0" loc="107" ncloc="107" packages="1" files="10" classes="10"/>
+<coverage generated="1712847304129" clover="3.2.0">
+  <project timestamp="1712847304129" name="All files">
+    <metrics statements="108" coveredstatements="107" conditionals="26" coveredconditionals="23" methods="34" coveredmethods="33" elements="168" coveredelements="163" complexity="0" loc="108" ncloc="108" packages="1" files="10" classes="10"/>
     <file name="SuperBoxMaker.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperBoxMaker.js">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="12" count="1" type="stmt"/>
@@ -12,21 +12,22 @@
       <line num="19" count="6" type="stmt"/>
     </file>
     <file name="SuperContent.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperContent.js">
-      <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="7" methods="2" coveredmethods="2"/>
-      <line num="15" count="7" type="stmt"/>
-      <line num="17" count="7" type="stmt"/>
+      <metrics statements="12" coveredstatements="12" conditionals="9" coveredconditionals="8" methods="2" coveredmethods="2"/>
+      <line num="16" count="7" type="stmt"/>
       <line num="18" count="7" type="stmt"/>
       <line num="19" count="7" type="stmt"/>
-      <line num="22" count="6" type="stmt"/>
-      <line num="23" count="6" type="stmt"/>
-      <line num="29" count="6" type="stmt"/>
-      <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="32" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="20" count="7" type="stmt"/>
+      <line num="21" count="7" type="stmt"/>
+      <line num="24" count="6" type="stmt"/>
+      <line num="25" count="6" type="stmt"/>
+      <line num="31" count="6" type="stmt"/>
+      <line num="32" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="33" count="1" type="stmt"/>
+      <line num="34" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="35" count="1" type="stmt"/>
     </file>
     <file name="SuperDisplay.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperDisplay.js">
-      <metrics statements="41" coveredstatements="41" conditionals="4" coveredconditionals="4" methods="13" coveredmethods="13"/>
+      <metrics statements="41" coveredstatements="41" conditionals="5" coveredconditionals="5" methods="13" coveredmethods="13"/>
       <line num="12" count="14" type="stmt"/>
       <line num="13" count="14" type="stmt"/>
       <line num="14" count="14" type="stmt"/>
@@ -70,23 +71,26 @@
       <line num="87" count="12" type="stmt"/>
     </file>
     <file name="SuperElement.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperElement.js">
-      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+      <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="7"/>
       <line num="24" count="38" type="stmt"/>
       <line num="26" count="38" type="stmt"/>
-      <line num="28" count="1" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="41" count="6" type="stmt"/>
-      <line num="42" count="6" type="stmt"/>
-      <line num="48" count="6" type="stmt"/>
-      <line num="49" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="50" count="3" type="stmt"/>
-      <line num="52" count="1" type="stmt"/>
-      <line num="59" count="6" type="stmt"/>
-      <line num="60" count="1" type="stmt"/>
-      <line num="71" count="6" type="stmt"/>
-      <line num="72" count="1" type="stmt"/>
-      <line num="79" count="6" type="stmt"/>
-      <line num="80" count="1" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="28" count="4" type="stmt"/>
+      <line num="31" count="38" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="46" count="6" type="stmt"/>
+      <line num="47" count="6" type="stmt"/>
+      <line num="53" count="6" type="stmt"/>
+      <line num="54" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="55" count="3" type="stmt"/>
+      <line num="57" count="1" type="stmt"/>
+      <line num="64" count="6" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+      <line num="76" count="6" type="stmt"/>
+      <line num="77" count="1" type="stmt"/>
+      <line num="84" count="6" type="stmt"/>
+      <line num="85" count="1" type="stmt"/>
     </file>
     <file name="SuperEvent.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperEvent.js">
       <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
@@ -97,7 +101,7 @@
       <line num="29" count="1" type="stmt"/>
     </file>
     <file name="SuperForm.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperForm.js">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <line num="10" count="3" type="stmt"/>
       <line num="13" count="6" type="stmt"/>
       <line num="18" count="6" type="stmt"/>
@@ -108,7 +112,7 @@
       <line num="34" count="6" type="stmt"/>
     </file>
     <file name="SuperImage.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperImage.js">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <line num="13" count="2" type="stmt"/>
       <line num="17" count="2" type="stmt"/>
       <line num="18" count="2" type="stmt"/>
@@ -117,15 +121,12 @@
       <line num="23" count="6" type="stmt"/>
     </file>
     <file name="SuperInput.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\SuperInput.js">
-      <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <line num="13" count="11" type="stmt"/>
       <line num="14" count="11" type="stmt"/>
       <line num="15" count="11" type="stmt"/>
-      <line num="17" count="11" type="stmt"/>
-      <line num="18" count="4" type="stmt"/>
-      <line num="19" count="4" type="stmt"/>
-      <line num="23" count="6" type="stmt"/>
-      <line num="25" count="6" type="stmt"/>
+      <line num="18" count="6" type="stmt"/>
+      <line num="20" count="6" type="stmt"/>
     </file>
     <file name="main.js" path="C:\Users\edtay\OneDrive\Desktop\Coding Practice\Objects\super-element\lib\main.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
